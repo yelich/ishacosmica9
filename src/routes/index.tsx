@@ -6,7 +6,6 @@ import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
 import { getAssetUrl } from "@/lib/asset-url";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -61,7 +60,6 @@ const SERVICIOS = [
   },
 ];
 
-
 const REDES = [
   { label: "Instagram", url: "https://www.instagram.com/ishacosmica" },
   { label: "WhatsApp", url: "https://wa.me/5495411979623" },
@@ -81,19 +79,17 @@ const REDES = [
 ];
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
-const WHATSAPP = "https://wa.me/5495411979623";
 const CALENDLY = "https://calendly.com/judyben9/30min";
 
 function Divider() {
   return (
-    <div className="mx-auto my-14 flex max-w-xs items-center gap-4">
+    <div className="mx-auto mb-12 flex max-w-xs items-center gap-4">
       <span className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/50" />
       <span className="text-primary">✦</span>
       <span className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/50" />
     </div>
   );
 }
-
 
 function Index() {
   return (
@@ -128,28 +124,25 @@ function Index() {
       </header>
 
       <main className="relative z-10">
-
         {/* HERO */}
-        <section id="bienvenida" className="scroll-mt-24 pt-10 sm:pt-16">
-          <div className="mx-auto max-w-5xl px-5 text-center">
+        <section id="bienvenida" className="scroll-mt-24 px-5 pb-16 pt-14 sm:pb-20 sm:pt-20">
+          <div className="mx-auto max-w-5xl text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-primary/80">
               Astrología para la nueva era
             </p>
-            <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2rem] leading-[1.1] sm:text-5xl lg:text-6xl">
+            <h1 className="mx-auto mt-5 max-w-3xl font-display text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
               Tu vida cuenta una historia.
               <br />
-              &nbsp;Los simbolos pueden ayudarte a leerla.
+              Los símbolos pueden ayudarte a leerla.
             </h1>
             <h2 className="mx-auto mt-6 max-w-3xl font-display text-xl sm:text-2xl lg:text-3xl">
               ¡Hola! Soy <span className="text-gold-gradient">Judith Bentolila</span> — Ishacósmica
             </h2>
           </div>
-
         </section>
 
-
         {/* SOBRE MÍ */}
-        <section id="sobre-mi" className="scroll-mt-24 px-5 py-10">
+        <section id="sobre-mi" className="scroll-mt-24 px-5 py-14 sm:py-16">
           <Divider />
           <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
             <div className="relative">
@@ -205,21 +198,40 @@ function Index() {
             </div>
           </div>
         </section>
-        {/* IMAGEN CORAZÓN SOLAR */}
-        <section className="mx-auto max-w-5xl px-5 py-6">
+
+        {/* SERVICIOS */}
+        <section id="servicios" className="scroll-mt-24 px-5 py-14 sm:py-16">
           <Divider />
-          <div className="overflow-hidden rounded-3xl border border-border/40 bg-black/30">
-            <img
-              src={getAssetUrl(corazonBEditedAsset.url)}
-              alt="Corazón Solar - Astrología para la nueva era"
-              className="w-full object-cover object-center"
-              style={{ aspectRatio: "1750/525" }}
-            />
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-center font-display text-3xl sm:text-4xl">Servicios</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+              Tres caminos distintos, un mismo destino: que vuelvas a sentirte al mando de tu vida.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {SERVICIOS.map((s) => (
+                <article key={s.titulo} className="card-mystic flex h-full flex-col rounded-3xl p-8">
+                  <h3 className="font-display text-2xl text-gold-gradient">{s.titulo}</h3>
+                  <p className="mt-4 text-muted-foreground">{s.texto}</p>
+                  <p className="mt-6 text-xs uppercase tracking-[0.3em] text-primary/80">
+                    Tu transformación
+                  </p>
+                  <p className="mt-3 mb-7 text-muted-foreground">{s.transformacion}</p>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+                  >
+                    Agendar
+                  </a>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* COMUNIDAD */}
-        <section id="comunidad" className="scroll-mt-24 px-5 py-10">
+        <section id="comunidad" className="scroll-mt-24 px-5 py-14 sm:py-16">
           <Divider />
           <div className="mx-auto max-w-5xl text-center">
             <p className="text-xs uppercase tracking-[0.35em] text-primary/80">
@@ -232,7 +244,15 @@ function Index() {
               Un contenedor sagrado donde el enfoque astrológico reflexivo y las almas en evolución
               se unen para transformar tus crisis en certezas. Conoce nuestros encuentros:
             </p>
-            <div className="mt-12 grid gap-6 text-left md:grid-cols-3">
+            <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-3xl border border-border/40 bg-black/30">
+              <img
+                src={getAssetUrl(corazonBEditedAsset.url)}
+                alt="Corazón Solar - Astrología para la nueva era"
+                className="w-full object-cover object-center"
+                style={{ aspectRatio: "1750/525" }}
+              />
+            </div>
+            <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
               {[
                 {
                   t: "Encuentros en vivo",
@@ -271,10 +291,8 @@ function Index() {
           </div>
         </section>
 
-
-
         {/* PROPUESTA DE VALOR */}
-        <section className="mx-auto max-w-4xl px-5 py-6 text-center">
+        <section className="mx-auto max-w-4xl px-5 py-14 text-center sm:py-16">
           <Divider />
           <p className="font-display text-2xl leading-relaxed sm:text-3xl">
             “Te ayudo a transformar la incertidumbre y las crisis en{" "}
@@ -285,41 +303,8 @@ function Index() {
           </p>
         </section>
 
-
-        {/* SERVICIOS */}
-        <section id="servicios" className="scroll-mt-24 px-5 py-10">
-          <Divider />
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-center font-display text-3xl sm:text-4xl">Servicios</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-              Tres caminos distintos, un mismo destino: que vuelvas a sentirte al mando de tu vida.
-            </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {SERVICIOS.map((s) => (
-                <article key={s.titulo} className="card-mystic flex h-full flex-col rounded-3xl p-8">
-                  <h3 className="font-display text-2xl text-gold-gradient">{s.titulo}</h3>
-                  <p className="mt-4 text-muted-foreground">{s.texto}</p>
-                  <p className="mt-6 text-xs uppercase tracking-[0.3em] text-primary/80">
-                    Tu transformación
-                  </p>
-                  <p className="mt-3 text-muted-foreground">{s.transformacion}</p>
-                  <a
-                    href={CALENDLY}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Agendar
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
         {/* TALLERES */}
-        <section id="talleres" className="scroll-mt-24 px-5 py-10">
+        <section id="talleres" className="scroll-mt-24 px-5 py-14 sm:py-16">
           <Divider />
           <div className="mx-auto max-w-5xl text-center">
             <p className="text-xs uppercase tracking-[0.35em] text-primary/80">
@@ -332,7 +317,7 @@ function Index() {
               Espacios de aprendizaje profundo donde la astrología, la alta magia y el trabajo
               energético se viven en cuerpo y alma, no solo se estudian.
             </p>
-            <div className="mt-12 grid gap-6 text-left md:grid-cols-3">
+            <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
               {[
                 {
                   t: "Talleres vivenciales",
@@ -365,7 +350,7 @@ function Index() {
         </section>
 
         {/* CONTACTO */}
-        <section id="contacto" className="scroll-mt-24 px-5 py-10">
+        <section id="contacto" className="scroll-mt-24 px-5 py-14 sm:py-16">
           <Divider />
           <div className="mx-auto max-w-3xl text-center">
             <img
@@ -373,11 +358,36 @@ function Index() {
               alt="Emblema Corazón Solar"
               className="mx-auto mb-6 w-20 float-slow"
             />
+            <h2 className="font-display text-3xl sm:text-4xl">
+              <span className="text-gold-gradient">Contacto</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+              Elige el canal que prefieras para comenzar tu camino: agenda tu sesión o escríbeme
+              directamente.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={CALENDLY}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Agendar una sesión
+              </a>
+              <a
+                href={TELEGRAM}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-full border border-primary/50 px-8 py-3 text-sm text-primary transition-colors hover:bg-primary/10"
+              >
+                Escribir por Telegram
+              </a>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="relative z-10 mt-12 border-t border-border/60 px-5 py-10 text-center text-sm text-muted-foreground">
+      <footer className="relative z-10 border-t border-border/60 px-5 py-10 text-center text-sm text-muted-foreground">
         <p className="font-display tracking-[0.25em] text-gold-gradient uppercase">
           Ishacosmica · Corazón Solar
         </p>
