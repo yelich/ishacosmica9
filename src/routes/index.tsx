@@ -139,12 +139,6 @@ function Index() {
                 {n.label}
               </a>
             ))}
-            <a
-              href="#contacto"
-              className="rounded-full border border-primary/50 px-4 py-2 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10"
-            >
-              Charlamos
-            </a>
           </nav>
         </div>
       </header>
