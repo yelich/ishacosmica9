@@ -169,19 +169,6 @@ function Index() {
             </div>
           </div>
 
-          <div className="mx-auto max-w-4xl px-5 pt-8 text-center sm:pt-12">
-            <p className="text-base text-muted-foreground sm:text-lg">
-              Este no es solo un espacio de estudio: es un contenedor sagrado de evolución,
-              contención y sabiduría compartida. Aquí nos reunimos almas dispuestas a mirar más allá
-              de lo visible, usando la astrología, el tarot y la energía cuántica como brújulas
-              inmediatas de vida.
-            </p>
-            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-              En Corazón Solar dejas de transitar tus cambios en soledad para integrarte en una red
-              de apoyo que eleva tu vibración y te sostiene en cada paso de tu despertar
-              espiritual. ¡Tu lugar junto al fuego sagrado está listo!
-            </p>
-          </div>
         </section>
 
 
