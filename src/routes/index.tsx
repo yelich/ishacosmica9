@@ -416,6 +416,52 @@ function Index() {
           </div>
         </section>
 
+        {/* TALLERES */}
+        <section id="talleres" className="scroll-mt-24 px-5 py-10">
+          <Divider />
+          <div className="mx-auto max-w-5xl text-center">
+            <p className="text-xs uppercase tracking-[0.35em] text-primary/80">
+              Formación y experiencia
+            </p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl">
+              Talleres <span className="text-gold-gradient">vivenciales</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
+              Espacios de aprendizaje profundo donde la astrología, la alta magia y el trabajo
+              energético se viven en cuerpo y alma, no solo se estudian.
+            </p>
+            <div className="mt-12 grid gap-6 text-left md:grid-cols-3">
+              {[
+                {
+                  t: "Talleres vivenciales",
+                  d: "Experiencias grupales para integrar los ciclos astrológicos con prácticas de introspección, ritual y expansión de la consciencia.",
+                },
+                {
+                  t: "Cursos de formación",
+                  d: "Programas estructurados de tarot, astrología evolutiva y Astroesoterismo Cuántico, para quienes desean profundizar paso a paso.",
+                },
+                {
+                  t: "Encuentros en vivo",
+                  d: "Clases periódicas dentro de la comunidad Corazón Solar, con espacio para preguntas, práctica guiada y acompañamiento directo.",
+                },
+              ].map((c) => (
+                <article key={c.t} className="card-mystic rounded-3xl p-8">
+                  <h3 className="font-display text-xl text-gold-gradient">{c.t}</h3>
+                  <p className="mt-4 text-muted-foreground">{c.d}</p>
+                </article>
+              ))}
+            </div>
+            <a
+              href={TELEGRAM}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Quiero enterarme de los próximos talleres
+            </a>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section id="preguntas" className="scroll-mt-24 px-5 py-10">
           <Divider />
