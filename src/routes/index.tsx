@@ -108,7 +108,6 @@ const REDES = [
 ];
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
-const CALENDLY = "https://calendly.com/judyben9/30min";
 
 function Divider() {
   return (
