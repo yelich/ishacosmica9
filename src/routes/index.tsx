@@ -262,9 +262,6 @@ function Index() {
             />
             <span className="min-w-0 truncate font-display text-base tracking-[0.14em] text-gold-gradient uppercase sm:text-lg">
               Judy Bentolila
-              <span className="hidden text-muted-foreground/70 xl:inline">
-                {" "}| Astrología para la Nueva Era
-              </span>
             </span>
           </a>
           <nav className="hidden items-center gap-x-6 text-sm lg:flex">
