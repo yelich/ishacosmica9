@@ -143,31 +143,14 @@ function Index() {
               <p className="mt-5 text-muted-foreground">
                 Desde hace más de veinte años acompaño procesos de transformación y autoconocimiento, integrando Astrología, Tarot, literatura, símbolos y distintas herramientas de consciencia.
               </p>
-            </div>
 
-            <div className="mx-auto mt-8 grid max-w-3xl gap-5 text-left md:grid-cols-2">
-              <div className="rounded-2xl border border-border/40 bg-black/20 p-6 backdrop-blur-sm">
-                <p className="text-sm uppercase tracking-[0.25em] text-primary/80">No creo en</p>
-                <p className="mt-3 text-muted-foreground">
-                  una astrología que determine tu destino.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 backdrop-blur-sm">
-                <p className="text-sm uppercase tracking-[0.25em] text-primary/80">Creo en</p>
-                <p className="mt-3 text-foreground">
-                  una astrología que abre preguntas, amplía la mirada y nos permite comprender el momento que estamos viviendo para elegir con mayor consciencia.
-                </p>
-              </div>
+              <a
+                href="#servicios"
+                className="mt-8 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Agendar una sesión
+              </a>
             </div>
-
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-10 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Agendar una sesión
-            </a>
           </div>
         </section>
 
