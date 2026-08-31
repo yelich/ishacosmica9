@@ -507,30 +507,6 @@ function Index() {
           </div>
         </section>
 
-        {/* MANIFIESTO */}
-        <section id="manifiesto" className="scroll-mt-32 px-5 py-14 sm:py-16">
-          <Divider />
-          <div className="mx-auto max-w-4xl rounded-3xl border border-primary/40 bg-black/30 p-9 text-center backdrop-blur-sm sm:p-14">
-            <h2 className="font-display text-3xl sm:text-4xl">
-              Nuestro <span className="text-gold-gradient">Manifiesto</span>
-            </h2>
-            <div className="mt-8 space-y-6 font-display text-xl leading-relaxed sm:text-2xl">
-              <p className="text-muted-foreground">
-                No vengo a decirte tu destino. No creo que un planeta determine tu vida. No creo
-                que una carta natal pueda reducir todo lo que sos. No creo que el Tarot deba
-                decidir por vos.
-              </p>
-              <p>
-                Creo en los símbolos como puertas. Creo en las preguntas. Creo en el conocimiento.
-                Creo en la posibilidad de mirar nuestra historia desde otra perspectiva.
-              </p>
-              <p className="text-gold-gradient">
-                El cielo puede mostrarnos el tiempo. La manera de vivirlo también nos pertenece.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* SESIONES */}
         <section id="sesiones" className="scroll-mt-32 px-5 py-14 sm:py-16">
           <Divider />
