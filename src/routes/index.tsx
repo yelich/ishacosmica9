@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+
 import corazonBAsset from "@/assets/corazonB.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
@@ -61,20 +61,6 @@ const SERVICIOS = [
   },
 ];
 
-const FAQ = [
-  {
-    q: "¿Y si me dices algo que no quiero escuchar?",
-    a: "No trabajo desde el miedo. Tu carta natal no es una sentencia, es un mapa: te muestra el terreno para que elijas el camino. Todo lo que veo te lo comparto con cuidado y siempre acompañado de un recurso concreto para trabajarlo. Sales de la sesión con más calma, no con más susto.",
-  },
-  {
-    q: "¿Necesito saber de astrología o tarot para empezar?",
-    a: "Para nada. Es como ir al mecánico: no hace falta que sepas de motores para entender qué le pasa a tu auto. Yo traduzco los símbolos a un lenguaje cotidiano, con ejemplos de tu vida real. Muchas personas llegan sin saber ni su ascendente y salen entendiéndose mejor que nunca.",
-  },
-  {
-    q: "¿Esto sustituye a la terapia psicológica o médica?",
-    a: "No, y te lo digo con total transparencia. Mi trabajo es un acompañamiento espiritual y energético que convive muy bien con tu terapia o tu tratamiento médico, nunca los reemplaza. Si en algún momento veo que necesitas otro tipo de ayuda, te lo voy a decir de frente.",
-  },
-];
 
 const REDES = [
   { label: "Instagram", url: "https://www.instagram.com/ishacosmica" },
@@ -110,8 +96,6 @@ function Divider() {
 
 
 function Index() {
-  const [open, setOpen] = useState<number | null>(0);
-
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background font-sans text-foreground">
       <div className="pointer-events-none fixed inset-0 starfield" aria-hidden="true" />
