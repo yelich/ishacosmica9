@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import corazonBAsset from "@/assets/corazonB.png.asset.json";
+import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
@@ -218,36 +219,16 @@ function Index() {
             </div>
           </div>
         </section>
-        {/* STORYTELLING */}
+        {/* IMAGEN CORAZÓN SOLAR */}
         <section className="mx-auto max-w-5xl px-5 py-6">
           <Divider />
-          <div className="card-mystic rounded-3xl p-8 sm:p-12">
-            <p className="text-xs uppercase tracking-[0.35em] text-primary/80">
-              ¿Por qué conmigo?
-            </p>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl">
-              Porque llevo más de 20 años acompañando a personas.
-            </h2>
-            <div className="mt-6 space-y-5 text-muted-foreground">
-              <p>
-                Soy profesora de Literatura antes que astróloga, y creo que eso lo explica todo:
-                me pasé la vida enseñando a leer historias. Una carta natal y una tirada de tarot
-                son exactamente eso, la historia de tu alma escrita en símbolos. Mi trabajo es
-                ayudarte a leerla, no leerla por ti.
-              </p>
-              <p>
-                Durante más de dos décadas acompañé procesos de transformación con Maestría en
-                Reiki, Memoria Celular y otros saberes del despertar de la conciencia. Hace más de
-                cinco años sumé la astrología y el Tarot como pilares de mi camino, y desde el
-                Astroesoterismo Cuántico uní lo ancestral con una mirada de hoy.
-              </p>
-              <p>
-                No te voy a hablar desde un pedestal. Yo también tuve mis crisis, mis noches de no
-                entender nada y mis vueltas al mismo punto. Por eso creé Corazón Solar: el espacio
-                cálido que a mí me hubiera gustado encontrar. Creo profundamente que el
-                conocimiento cobra sentido cuando se convierte en experiencia de transformación.
-              </p>
-            </div>
+          <div className="overflow-hidden rounded-3xl border border-border/40 bg-black/30">
+            <img
+              src={getAssetUrl(corazonBEditedAsset.url)}
+              alt="Corazón Solar - Astrología para la nueva era"
+              className="w-full object-cover object-center"
+              style={{ aspectRatio: "1750/525" }}
+            />
           </div>
         </section>
 
