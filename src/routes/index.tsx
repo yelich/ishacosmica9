@@ -124,20 +124,50 @@ function Index() {
       </header>
 
       <main className="relative z-10">
-        {/* HERO */}
+        {/* HERO / PROPUESTA DE VALOR */}
         <section id="bienvenida" className="scroll-mt-24 px-5 pb-16 pt-14 sm:pb-20 sm:pt-20">
           <div className="mx-auto max-w-5xl text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-primary/80">
-              Astrología para la nueva era
+              Astrología para la Nueva Era
             </p>
             <h1 className="mx-auto mt-5 max-w-3xl font-display text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
               Tu vida cuenta una historia.
               <br />
               Los símbolos pueden ayudarte a leerla.
             </h1>
-            <h2 className="mx-auto mt-6 max-w-3xl font-display text-xl sm:text-2xl lg:text-3xl">
-              ¡Hola! Soy <span className="text-gold-gradient">Judith Bentolila</span> — Ishacósmica
-            </h2>
+
+            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 backdrop-blur-sm sm:p-10">
+              <p className="font-display text-xl text-gold-gradient sm:text-2xl">
+                Soy Judy Bentolila, Maestra de Astrología, Taróloga y Profesora de Literatura.
+              </p>
+              <p className="mt-5 text-muted-foreground">
+                Desde hace más de veinte años acompaño procesos de transformación y autoconocimiento, integrando Astrología, Tarot, literatura, símbolos y distintas herramientas de consciencia.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-8 grid max-w-3xl gap-5 text-left md:grid-cols-2">
+              <div className="rounded-2xl border border-border/40 bg-black/20 p-6 backdrop-blur-sm">
+                <p className="text-sm uppercase tracking-[0.25em] text-primary/80">No creo en</p>
+                <p className="mt-3 text-muted-foreground">
+                  una astrología que determine tu destino.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 backdrop-blur-sm">
+                <p className="text-sm uppercase tracking-[0.25em] text-primary/80">Creo en</p>
+                <p className="mt-3 text-foreground">
+                  una astrología que abre preguntas, amplía la mirada y nos permite comprender el momento que estamos viviendo para elegir con mayor consciencia.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Agendar una sesión
+            </a>
           </div>
         </section>
 
