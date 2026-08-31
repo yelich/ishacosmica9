@@ -486,8 +486,6 @@ function Index() {
           <p className="mt-2 text-sm text-muted-foreground">JudyBentolila.com</p>
         </div>
       </footer>
-
-      <BookingDialog open={booking} onClose={() => setBooking(false)} />
     </div>
   );
 }
