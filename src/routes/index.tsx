@@ -47,9 +47,9 @@ const SERVICIOS = [
   {
     titulo: "Astrología Evolutiva.",
     texto:
-      "Una posibilidad de observar tus recursos, desafios, tus ciclos y las preguntas que estan buscando una respuesta en este moemnto de tu vida.",
+      "Tu carta natal no es una sentencia.",
     transformacion:
-      "Una limpieza profunda de tu campo electromagnético. Pensada para desbloquear el cansancio físico y mental, y permitir que tu vitalidad y tu abundancia vuelvan a fluir sin resistencia.",
+      "Una posibilidad de observar tus recursos, desafios, tus ciclos y las preguntas que estan buscando una respuesta en este moemnto de tu vida.",
   },
   {
     titulo: "Reiki y Alineación de Energía.",
