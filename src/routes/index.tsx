@@ -34,7 +34,6 @@ const NAV = [
   { id: "sobre-mi", label: "Sobre Mí" },
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
-  { id: "manifiesto", label: "Manifiesto" },
 ];
 
 const METODOLOGIA = [
@@ -109,7 +108,6 @@ const REDES = [
 ];
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
-const CALENDLY = "https://calendly.com/judyben9/30min";
 
 function Divider() {
   return (
@@ -122,129 +120,7 @@ function Divider() {
 }
 
 
-function BookingDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [sent, setSent] = useState(false);
-  if (!open) return null;
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 p-4 backdrop-blur-sm sm:items-center"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Reservar una sesión"
-      onClick={onClose}
-    >
-      <div
-        className="card-mystic max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl p-7 sm:p-9"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
-          <div className="min-w-0">
-            <h3 className="font-display text-2xl text-gold-gradient">Reservar una sesión</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Contame con qué llegás y te respondo con disponibilidad.
-            </p>
-          </div>
-          <button
-            onClick={onClose}
-            aria-label="Cerrar"
-            className="shrink-0 rounded-full border border-primary/30 px-3 py-1 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-          >
-            ✕
-          </button>
-        </div>
-
-        {sent ? (
-          <div className="mt-8 text-center">
-            <p className="font-display text-xl text-gold-gradient">¡Gracias!</p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Recibí tu mensaje. También podés agendar directo en el calendario.
-            </p>
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-block rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Abrir calendario
-            </a>
-          </div>
-        ) : (
-          <form
-            className="mt-6 space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
-          >
-            <div>
-              <label htmlFor="nombre" className="text-xs uppercase tracking-[0.25em] text-primary/80">
-                Nombre
-              </label>
-              <input
-                id="nombre"
-                required
-                className="mt-2 w-full rounded-xl border border-input bg-black/30 px-4 py-3 text-sm outline-none focus:border-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="text-xs uppercase tracking-[0.25em] text-primary/80">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                className="mt-2 w-full rounded-xl border border-input bg-black/30 px-4 py-3 text-sm outline-none focus:border-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="tipo" className="text-xs uppercase tracking-[0.25em] text-primary/80">
-                Sesión
-              </label>
-              <select
-                id="tipo"
-                className="mt-2 w-full rounded-xl border border-input bg-black/30 px-4 py-3 text-sm outline-none focus:border-primary"
-              >
-                {SESIONES.map((s) => (
-                  <option key={s.titulo} value={s.titulo} className="bg-background">
-                    {s.titulo}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="mensaje" className="text-xs uppercase tracking-[0.25em] text-primary/80">
-                Tu pregunta
-              </label>
-              <textarea
-                id="mensaje"
-                rows={3}
-                className="mt-2 w-full rounded-xl border border-input bg-black/30 px-4 py-3 text-sm outline-none focus:border-primary"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Enviar solicitud
-            </button>
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noreferrer"
-              className="block text-center text-xs text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-            >
-              O agendá directamente en el calendario
-            </a>
-          </form>
-        )}
-      </div>
-    </div>
-  );
-}
-
 function Index() {
-  const [booking, setBooking] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
 
   return (
@@ -275,12 +151,6 @@ function Index() {
               </a>
             ))}
           </nav>
-          <button
-            onClick={() => setBooking(true)}
-            className="shrink-0 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Reservar Sesión
-          </button>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-border/40 px-5 py-2 text-sm lg:hidden">
           {NAV.map((n) => (
@@ -329,12 +199,6 @@ function Index() {
                 >
                   Descubrí mi propuesta
                 </a>
-                <button
-                  onClick={() => setBooking(true)}
-                  className="rounded-full border border-primary/50 px-8 py-3 text-sm text-primary transition-colors hover:bg-primary/10"
-                >
-                  Reservar sesión
-                </button>
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-md">
@@ -489,6 +353,26 @@ function Index() {
               </p>
             </div>
 
+            <div id="manifiesto" className="mx-auto mt-14 max-w-4xl rounded-3xl border border-primary/40 bg-black/30 p-9 text-center backdrop-blur-sm sm:p-14">
+              <h3 className="font-display text-3xl sm:text-4xl">
+                Nuestro <span className="text-gold-gradient">Manifiesto</span>
+              </h3>
+              <div className="mt-8 space-y-6 font-display text-xl leading-relaxed sm:text-2xl">
+                <p className="text-muted-foreground">
+                  No vengo a decirte tu destino. No creo que un planeta determine tu vida. No creo
+                  que una carta natal pueda reducir todo lo que sos. No creo que el Tarot deba
+                  decidir por vos.
+                </p>
+                <p>
+                  Creo en los símbolos como puertas. Creo en las preguntas. Creo en el conocimiento.
+                  Creo en la posibilidad de mirar nuestra historia desde otra perspectiva.
+                </p>
+                <p className="text-gold-gradient">
+                  El cielo puede mostrarnos el tiempo. La manera de vivirlo también nos pertenece.
+                </p>
+              </div>
+            </div>
+
             <a
               href={TELEGRAM}
               target="_blank"
@@ -497,30 +381,6 @@ function Index() {
             >
               Quiero unirme a la comunidad
             </a>
-          </div>
-        </section>
-
-        {/* MANIFIESTO */}
-        <section id="manifiesto" className="scroll-mt-32 px-5 py-14 sm:py-16">
-          <Divider />
-          <div className="mx-auto max-w-4xl rounded-3xl border border-primary/40 bg-black/30 p-9 text-center backdrop-blur-sm sm:p-14">
-            <h2 className="font-display text-3xl sm:text-4xl">
-              Nuestro <span className="text-gold-gradient">Manifiesto</span>
-            </h2>
-            <div className="mt-8 space-y-6 font-display text-xl leading-relaxed sm:text-2xl">
-              <p className="text-muted-foreground">
-                No vengo a decirte tu destino. No creo que un planeta determine tu vida. No creo
-                que una carta natal pueda reducir todo lo que sos. No creo que el Tarot deba
-                decidir por vos.
-              </p>
-              <p>
-                Creo en los símbolos como puertas. Creo en las preguntas. Creo en el conocimiento.
-                Creo en la posibilidad de mirar nuestra historia desde otra perspectiva.
-              </p>
-              <p className="text-gold-gradient">
-                El cielo puede mostrarnos el tiempo. La manera de vivirlo también nos pertenece.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -546,12 +406,6 @@ function Index() {
                 </article>
               ))}
             </div>
-            <button
-              onClick={() => setBooking(true)}
-              className="mt-10 rounded-full bg-primary px-9 py-3 text-sm font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Reservar una sesión
-            </button>
           </div>
         </section>
       </main>
@@ -632,8 +486,6 @@ function Index() {
           <p className="mt-2 text-sm text-muted-foreground">JudyBentolila.com</p>
         </div>
       </footer>
-
-      <BookingDialog open={booking} onClose={() => setBooking(false)} />
     </div>
   );
 }
