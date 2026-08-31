@@ -274,12 +274,6 @@ function Index() {
               </a>
             ))}
           </nav>
-          <button
-            onClick={() => setBooking(true)}
-            className="shrink-0 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Reservar Sesión
-          </button>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-border/40 px-5 py-2 text-sm lg:hidden">
           {NAV.map((n) => (
