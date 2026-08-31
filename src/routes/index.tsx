@@ -30,11 +30,10 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
-  { id: "bienvenida", label: "Bienvenida" },
   { id: "sobre-mi", label: "Sobre Mí" },
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
-  { id: "preguntas", label: "Preguntas" },
+  { id: "talleres", label: "Talleres" },
   { id: "contacto", label: "Contacto" },
 ];
 
@@ -127,7 +126,7 @@ function Index() {
               className="h-10 w-10"
             />
             <span className="font-display text-lg tracking-[0.18em] text-gold-gradient uppercase sm:text-xl">
-              Ishacosmica · Corazón Solar
+              Ishacosmica
             </span>
           </a>
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
