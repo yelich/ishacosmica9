@@ -38,25 +38,25 @@ const NAV = [
 
 const SERVICIOS = [
   {
-    titulo: "Tarot y Astrología Evolutiva",
+    titulo: "Tarot.",
     texto:
       "La comprensión simbólica y astral puesta al servicio de tus decisiones conscientes.",
     transformacion:
       "Obtienes una hoja de ruta clara de tu alma. No hago predicciones para asustarte, sino lecturas estratégicas que te dan respuestas inmediatas para tomar las riendas de tu presente.",
   },
   {
-    titulo: "Reiki y Alineación de Energía",
+    titulo: "Astrología Evolutiva.",
     texto:
-      "Restauración del campo bioenergético para recuperar la armonía interior.",
+      "Una posibilidad de observar tus recursos, desafios, tus ciclos y las preguntas que estan buscando una respuesta en este moemnto de tu vida.",
     transformacion:
       "Una limpieza profunda de tu campo electromagnético. Pensada para desbloquear el cansancio físico y mental, y permitir que tu vitalidad y tu abundancia vuelvan a fluir sin resistencia.",
   },
   {
-    titulo: "Astroesoterismo Cuántico y Alta Magia",
+    titulo: "Reiki y Alineación de Energía.",
     texto:
-      "Intervención cuántica avanzada para reprogramar tu frecuencia y disolver bloqueos.",
+      "Restauración del campo bioenergético para recuperar la armonía interior.",
     transformacion:
-      "El puente definitivo hacia tu nueva realidad. Intervenimos directamente en tu vibración para reprogramar patrones repetitivos y romper bloqueos invisibles en tiempo récord.",
+      "Una limpieza profunda de tu campo electromagnético. Pensada para desbloquear el cansancio físico y mental, y permitir que tu vitalidad y tu abundancia vuelvan a fluir sin resistencia.",
   },
 ];
 
