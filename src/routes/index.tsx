@@ -379,8 +379,16 @@ function Index() {
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-md">
-              <div className="float-slow">
-                <ConstellationArt />
+              <div
+                className="pointer-events-none absolute inset-0 rounded-full bg-primary/20 blur-3xl"
+                aria-hidden="true"
+              />
+              <div className="float-slow relative">
+                <img
+                  src={getAssetUrl(markAsset.url)}
+                  alt="Emblema Corazón Solar"
+                  className="mx-auto w-3/4 drop-shadow-[0_0_45px_oklch(0.83_0.14_85/45%)]"
+                />
               </div>
             </div>
           </div>
