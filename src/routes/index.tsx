@@ -121,7 +121,6 @@ function Divider() {
 
 
 function Index() {
-  const [booking, setBooking] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
 
   return (
