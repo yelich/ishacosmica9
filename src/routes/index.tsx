@@ -34,7 +34,6 @@ const NAV = [
   { id: "sobre-mi", label: "Sobre Mí" },
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
-  { id: "manifiesto", label: "Manifiesto" },
 ];
 
 const METODOLOGIA = [
