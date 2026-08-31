@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import corazonBAsset from "@/assets/corazonB.png.asset.json";
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
@@ -144,19 +143,6 @@ function Index() {
             <h2 className="mx-auto mt-6 max-w-3xl font-display text-xl sm:text-2xl lg:text-3xl">
               ¡Hola! Soy <span className="text-gold-gradient">Judith Bentolila</span> — Ishacósmica
             </h2>
-          </div>
-
-          <div className="relative mt-8 sm:mt-10">
-            <div className="mx-auto w-full max-w-[1920px] px-0 sm:px-5 lg:px-10">
-              <div className="relative overflow-hidden rounded-none sm:rounded-2xl bg-transparent">
-                <img
-                  src={getAssetUrl(corazonBAsset.url)}
-                  alt="Corazón Solar - Astrología para la nueva era"
-                  className="w-full object-cover object-center"
-                  style={{ aspectRatio: "1750/525" }}
-                />
-              </div>
-            </div>
           </div>
 
         </section>
