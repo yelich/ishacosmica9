@@ -533,12 +533,6 @@ function Index() {
                 </article>
               ))}
             </div>
-            <button
-              onClick={() => setBooking(true)}
-              className="mt-10 rounded-full bg-primary px-9 py-3 text-sm font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Reservar una sesión
-            </button>
           </div>
         </section>
       </main>
