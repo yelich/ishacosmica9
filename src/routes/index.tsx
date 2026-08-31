@@ -249,50 +249,6 @@ function Index() {
           </div>
         </section>
 
-        {/* PROPUESTA DE VALOR */}
-        <section className="mx-auto max-w-4xl px-5 py-6 text-center">
-          <Divider />
-          <p className="font-display text-2xl leading-relaxed sm:text-3xl">
-            “Te ayudo a transformar la incertidumbre y las crisis en{" "}
-            <span className="text-gold-gradient">claridad absoluta</span>, guiándote hacia un
-            autoconocimiento profundo que devuelve el propósito espiritual a tu vida. A través de
-            la comunidad Corazón Solar y mi guía experta, obtendrás las certezas y la fuerza
-            interior necesarias para liderar tu propio destino ante cualquier desafío.”
-          </p>
-        </section>
-
-
-        {/* SERVICIOS */}
-        <section id="servicios" className="scroll-mt-24 px-5 py-10">
-          <Divider />
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-center font-display text-3xl sm:text-4xl">Servicios</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-              Tres caminos distintos, un mismo destino: que vuelvas a sentirte al mando de tu vida.
-            </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {SERVICIOS.map((s) => (
-                <article key={s.titulo} className="card-mystic flex h-full flex-col rounded-3xl p-8">
-                  <h3 className="font-display text-2xl text-gold-gradient">{s.titulo}</h3>
-                  <p className="mt-4 text-muted-foreground">{s.texto}</p>
-                  <p className="mt-6 text-xs uppercase tracking-[0.3em] text-primary/80">
-                    Tu transformación
-                  </p>
-                  <p className="mt-3 text-muted-foreground">{s.transformacion}</p>
-                  <a
-                    href={CALENDLY}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Agendar
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* COMUNIDAD */}
         <section id="comunidad" className="scroll-mt-24 px-5 py-10">
           <Divider />
@@ -345,6 +301,53 @@ function Index() {
             </a>
           </div>
         </section>
+
+
+
+        {/* PROPUESTA DE VALOR */}
+        <section className="mx-auto max-w-4xl px-5 py-6 text-center">
+          <Divider />
+          <p className="font-display text-2xl leading-relaxed sm:text-3xl">
+            “Te ayudo a transformar la incertidumbre y las crisis en{" "}
+            <span className="text-gold-gradient">claridad absoluta</span>, guiándote hacia un
+            autoconocimiento profundo que devuelve el propósito espiritual a tu vida. A través de
+            la comunidad Corazón Solar y mi guía experta, obtendrás las certezas y la fuerza
+            interior necesarias para liderar tu propio destino ante cualquier desafío.”
+          </p>
+        </section>
+
+
+        {/* SERVICIOS */}
+        <section id="servicios" className="scroll-mt-24 px-5 py-10">
+          <Divider />
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-center font-display text-3xl sm:text-4xl">Servicios</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+              Tres caminos distintos, un mismo destino: que vuelvas a sentirte al mando de tu vida.
+            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {SERVICIOS.map((s) => (
+                <article key={s.titulo} className="card-mystic flex h-full flex-col rounded-3xl p-8">
+                  <h3 className="font-display text-2xl text-gold-gradient">{s.titulo}</h3>
+                  <p className="mt-4 text-muted-foreground">{s.texto}</p>
+                  <p className="mt-6 text-xs uppercase tracking-[0.3em] text-primary/80">
+                    Tu transformación
+                  </p>
+                  <p className="mt-3 text-muted-foreground">{s.transformacion}</p>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+                  >
+                    Agendar
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/* TALLERES */}
         <section id="talleres" className="scroll-mt-24 px-5 py-10">
