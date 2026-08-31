@@ -329,26 +329,26 @@ function Index() {
               />
             </div>
 
-            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-left backdrop-blur-sm sm:p-10">
-              <p className="text-muted-foreground">
+            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-center backdrop-blur-sm sm:p-10">
+              <p className="text-lg text-muted-foreground sm:text-xl">
                 Corazón Solar nació como un espacio para reunir personas interesadas en otra manera
                 de acercarse a la astrología.
               </p>
-              <p className="mt-5 text-muted-foreground">
+              <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
                 Una Astrología donde el conocimiento dialogue con el arte, la literatura, el tarot,
                 los símbolos y la experiencia personal.
               </p>
 
-              <ul className="mt-8 grid gap-3 text-foreground sm:grid-cols-2">
+              <ul className="mt-8 grid justify-items-center gap-3 text-foreground sm:grid-cols-2">
                 {["Clases.", "Encuentros.", "Material de estudio.", "Investigación.", "Reflexión.", "Comunidad."].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
+                  <li key={item} className="flex items-center justify-center gap-3 text-base sm:text-lg">
                     <span className="text-primary">✦</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-8 text-foreground">
+              <p className="mt-8 text-lg text-foreground sm:text-xl">
                 Y, sobre todo, la posibilidad de seguir aprendiendo juntos.
               </p>
             </div>
