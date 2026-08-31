@@ -332,64 +332,6 @@ function Index() {
           </p>
         </section>
 
-        {/* SOBRE MÍ */}
-        <section id="sobre-mi" className="scroll-mt-24 px-5 py-10">
-          <Divider />
-          <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-            <div className="relative">
-              <img
-                src={getAssetUrl(judyAsset.url)}
-                alt="Retrato de Judith Bentolila, Ishacósmica"
-                className="w-full rounded-3xl border border-border"
-              />
-              <div
-                className="pointer-events-none absolute inset-0 rounded-3xl"
-                style={{
-                  background:
-                    "radial-gradient(70% 60% at 50% 40%, transparent 45%, oklch(0.13 0.03 300 / 70%) 100%)",
-                }}
-                aria-hidden="true"
-              />
-            </div>
-            <div>
-              <h2 className="font-display text-3xl sm:text-4xl">
-                ¡Hola! Soy <span className="text-gold-gradient">Judith Bentolila</span> —
-                Ishacósmica
-              </h2>
-              <div className="mt-6 space-y-4 text-muted-foreground">
-                <p>
-                  Profesora de Literatura, astróloga, taróloga y terapeuta holística. Desde hace
-                  más de 20 años acompaño a personas en procesos de transformación personal a
-                  través de distintas disciplinas terapéuticas, integrando herramientas como la
-                  Maestría en Reiki, la Memoria Celular y otros saberes orientados al despertar de
-                  la conciencia. Hace más de cinco años incorporé la Astrología y el Tarot como
-                  pilares fundamentales de mi camino profesional.
-                </p>
-                <p>
-                  Desde la visión del Astroesoterismo Cuántico integro los conocimientos
-                  ancestrales con una mirada contemporánea, comprendiendo que cada carta natal y
-                  cada símbolo del Tarot son mapas de autoconocimiento que nos permiten reconocer
-                  nuestro propósito, transformar desafíos en oportunidades y expandir nuestro
-                  potencial. Mi misión es acompañarte a descubrir tus propios recursos, fortalecer
-                  tu poder interior y recorrer un camino de evolución consciente.
-                </p>
-                <p>
-                  Hoy brindo sesiones personalizadas, talleres vivenciales, cursos de formación y
-                  clases, presenciales y online, creando espacios cálidos, profundos y respetuosos
-                  donde cada persona puede aprender, sanar y crecer a su propio ritmo.
-                </p>
-              </div>
-              <a
-                href={TELEGRAM}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-7 inline-block rounded-full border border-primary/50 px-7 py-3 text-sm text-primary transition-colors hover:bg-primary/10"
-              >
-                ¿Quieres saber más? Únete a Corazón Solar
-              </a>
-            </div>
-          </div>
-        </section>
 
         {/* SERVICIOS */}
         <section id="servicios" className="scroll-mt-24 px-5 py-10">
