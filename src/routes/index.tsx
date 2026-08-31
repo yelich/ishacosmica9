@@ -194,8 +194,9 @@ function Index() {
               Astrología para la nueva era
             </p>
             <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2rem] leading-[1.1] sm:text-5xl lg:text-6xl">
-              Con <span className="text-gold-gradient">Judy Bentolila</span> transformas la
-              incertidumbre en claridad absoluta
+              Tu vida cuenta una historia.
+              <br />
+              &nbsp;Los simbolos pueden ayudarte a leerla.
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
               Bienvenida a Corazón Solar, el refugio cuántico donde transformamos tus crisis en
