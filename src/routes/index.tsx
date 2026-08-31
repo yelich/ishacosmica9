@@ -322,12 +322,6 @@ function Index() {
                 >
                   Descubrí mi propuesta
                 </a>
-                <button
-                  onClick={() => setBooking(true)}
-                  className="rounded-full border border-primary/50 px-8 py-3 text-sm text-primary transition-colors hover:bg-primary/10"
-                >
-                  Reservar sesión
-                </button>
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-md">
