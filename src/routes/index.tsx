@@ -140,20 +140,6 @@ function Index() {
               <br />
               &nbsp;Los simbolos pueden ayudarte a leerla.
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-              Bienvenida a Corazón Solar, el refugio cuántico donde transformamos tus crisis en
-              claridad a la velocidad de la luz.
-            </p>
-            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href={TELEGRAM}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full rounded-full bg-primary px-7 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
-              >
-                Quiero unirme a la comunidad
-              </a>
-            </div>
           </div>
 
           <div className="relative mt-8 sm:mt-10">
