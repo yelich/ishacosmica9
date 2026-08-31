@@ -373,31 +373,6 @@ function Index() {
               alt="Emblema Corazón Solar"
               className="mx-auto mb-6 w-20 float-slow"
             />
-            <h2 className="font-display text-3xl sm:text-4xl">Charlamos</h2>
-            <p className="mt-5 text-lg text-muted-foreground">
-              No hace falta que tengas claro qué necesitas ni que sepas por dónde empezar.
-              Escríbeme y me cuentas qué te está pasando, como quien le cuenta algo a una amiga
-              tomando un café. Yo te leo, te respondo y entre las dos vemos cuál es el primer paso.
-              Sin compromiso y sin apuro: aquí se llega cuando se está lista.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Escribirme por WhatsApp
-              </a>
-              <a
-                href={TELEGRAM}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-primary/50 px-8 py-3 text-sm text-primary transition-colors hover:bg-primary/10"
-              >
-                Entrar a la comunidad
-              </a>
-            </div>
           </div>
         </section>
       </main>
