@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import corazonBAsset from "@/assets/corazonB.png.asset.json";
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
