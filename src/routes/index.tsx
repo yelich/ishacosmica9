@@ -257,35 +257,6 @@ function Index() {
           </div>
         </section>
 
-        {/* PAS */}
-        <section className="mx-auto max-w-4xl px-5 py-10">
-          <Divider />
-          <h2 className="text-center font-display text-3xl sm:text-4xl">
-            Si sientes que tu vida se movió de lugar y todavía no encuentras el mapa…
-          </h2>
-          <div className="mt-10 space-y-6 text-lg text-muted-foreground">
-            <p>
-              Te levantas con esa sensación rara en el pecho: nada está tan mal, pero nada termina
-              de encajar. Vas cumpliendo con todo, sostienes a los demás y, cuando la casa queda en
-              silencio, aparece la pregunta incómoda: <em>¿esto es todo?</em>
-            </p>
-            <p>
-              Y entonces empiezas a girar en círculos. Consultas mil videos, guardas frases de
-              Instagram, preguntas a una amiga, a otra, a un tarot online que te dice algo y al día
-              siguiente lo contrario. Es como buscar una dirección con tres mapas distintos abiertos
-              a la vez: cuanta más información juntas, más perdida te sientes. Y mientras tanto el
-              tiempo pasa, los mismos vínculos se repiten, el mismo cansancio vuelve, y esa decisión
-              importante sigue esperándote en el cajón.
-            </p>
-            <p className="text-foreground">
-              Aquí hacemos algo distinto. No te doy más información: te doy claridad. Con tu carta
-              natal y el tarot como mapa, y con las terapias energéticas para mover lo que está
-              trabado, ordenamos juntas tu historia hasta que puedas ver con tus propios ojos qué
-              está pasando, por qué se repite y cuál es tu siguiente paso real. Sales sabiendo qué
-              hacer el lunes por la mañana, no sólo con una linda metáfora.
-            </p>
-          </div>
-        </section>
 
         {/* STORYTELLING */}
         <section className="mx-auto max-w-5xl px-5 py-6">
