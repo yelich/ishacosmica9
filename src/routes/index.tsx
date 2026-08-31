@@ -121,44 +121,6 @@ function Divider() {
   );
 }
 
-function ConstellationArt() {
-  return (
-    <svg
-      viewBox="0 0 400 400"
-      className="h-full w-full text-primary/70"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="0.6" opacity="0.5" />
-      <circle cx="200" cy="200" r="110" stroke="currentColor" strokeWidth="0.6" opacity="0.35" />
-      <circle cx="200" cy="200" r="70" stroke="currentColor" strokeWidth="0.6" opacity="0.25" />
-      <polygon
-        points="200,60 322,290 78,290"
-        stroke="currentColor"
-        strokeWidth="0.7"
-        opacity="0.45"
-      />
-      <polygon
-        points="200,340 78,110 322,110"
-        stroke="currentColor"
-        strokeWidth="0.7"
-        opacity="0.35"
-      />
-      <path d="M120 150 L200 110 L280 170 L250 260 L150 250 Z" stroke="currentColor" strokeWidth="0.6" opacity="0.5" />
-      {[
-        [120, 150],
-        [200, 110],
-        [280, 170],
-        [250, 260],
-        [150, 250],
-        [200, 200],
-      ].map(([cx, cy]) => (
-        <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3" fill="currentColor" />
-      ))}
-      <circle cx="200" cy="200" r="26" fill="currentColor" opacity="0.12" />
-    </svg>
-  );
-}
 
 function BookingDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [sent, setSent] = useState(false);
@@ -379,8 +341,16 @@ function Index() {
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-md">
-              <div className="float-slow">
-                <ConstellationArt />
+              <div
+                className="pointer-events-none absolute inset-0 rounded-full bg-primary/20 blur-3xl"
+                aria-hidden="true"
+              />
+              <div className="float-slow relative">
+                <img
+                  src={getAssetUrl(markAsset.url)}
+                  alt="Emblema Corazón Solar"
+                  className="mx-auto w-3/4 drop-shadow-[0_0_45px_oklch(0.83_0.14_85/45%)]"
+                />
               </div>
             </div>
           </div>
