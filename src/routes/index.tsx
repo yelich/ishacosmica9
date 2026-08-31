@@ -247,16 +247,13 @@ function Index() {
         <section id="comunidad" className="scroll-mt-24 px-5 py-14 sm:py-16">
           <Divider />
           <div className="mx-auto max-w-5xl text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-primary/80">
-              Ecosistema de apoyo
-            </p>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl">
+            <h2 className="font-display text-3xl uppercase tracking-wide sm:text-4xl">
               Comunidad <span className="text-gold-gradient">Corazón Solar</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-              Un contenedor sagrado donde el enfoque astrológico reflexivo y las almas en evolución
-              se unen para transformar tus crisis en certezas. Conoce nuestros encuentros:
+            <p className="mx-auto mt-4 max-w-2xl font-display text-xl text-gold-gradient sm:text-2xl">
+              Aprender. Compartir. Expandir.
             </p>
+
             <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-3xl border border-border/40 bg-black/30">
               <img
                 src={getAssetUrl(corazonBEditedAsset.url)}
@@ -265,39 +262,36 @@ function Index() {
                 style={{ aspectRatio: "1750/525" }}
               />
             </div>
-            <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
-              {[
-                {
-                  t: "Encuentros en vivo",
-                  d: "Clases periódicas y espacios de interacción grupal para profundizar en el autoconocimiento.",
-                },
-                {
-                  t: "Astrología para la Nueva Era",
-                  d: "Acompañamiento durante ciclos astrológicos importantes —temporadas de eclipses, lunas llenas— para la observación interna y la expansión de la consciencia.",
-                },
-                {
-                  t: "Enfoque reflexivo",
-                  d: "Promovemos la pausa, el registro de las emociones y la introspección, en lugar de la búsqueda apresurada de respuestas externas.",
-                },
-              ].map((c) => (
-                <article key={c.t} className="card-mystic rounded-3xl p-8">
-                  <h3 className="font-display text-xl text-gold-gradient">{c.t}</h3>
-                  <p className="mt-4 text-muted-foreground">{c.d}</p>
-                </article>
-              ))}
+
+            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-left backdrop-blur-sm sm:p-10">
+              <p className="text-muted-foreground">
+                Corazón Solar nació como un espacio para reunir personas interesadas en otra manera
+                de acercarse a la astrología.
+              </p>
+              <p className="mt-5 text-muted-foreground">
+                Una Astrología donde el conocimiento dialogue con el arte, la literatura, el tarot,
+                los símbolos y la experiencia personal.
+              </p>
+
+              <ul className="mt-8 grid gap-3 text-foreground sm:grid-cols-2">
+                {["Clases.", "Encuentros.", "Material de estudio.", "Investigación.", "Reflexión.", "Comunidad."].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="text-primary">✦</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-8 text-foreground">
+                Y, sobre todo, la posibilidad de seguir aprendiendo juntos.
+              </p>
             </div>
-            <h3 className="mt-14 font-display text-2xl sm:text-3xl">
-              Tu lugar junto al fuego sagrado está listo
-            </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              En Corazón Solar dejas de transitar tus cambios en soledad para integrarte en una red
-              de apoyo que eleva tu vibración y te sostiene en cada paso de tu despertar espiritual.
-            </p>
+
             <a
               href={TELEGRAM}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              className="mt-10 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
               Quiero unirme a la comunidad
             </a>
