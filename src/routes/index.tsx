@@ -434,33 +434,6 @@ function Index() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="preguntas" className="scroll-mt-24 px-5 py-10">
-          <Divider />
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-center font-display text-3xl sm:text-4xl">
-              Preguntas que me hacen siempre
-            </h2>
-            <div className="mt-10 space-y-4">
-              {FAQ.map((f, i) => (
-                <div key={f.q} className="card-mystic rounded-2xl">
-                  <button
-                    onClick={() => setOpen(open === i ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-xl"
-                    aria-expanded={open === i}
-                  >
-                    <span>{f.q}</span>
-                    <span className="text-primary">{open === i ? "−" : "+"}</span>
-                  </button>
-                  {open === i && (
-                    <p className="px-6 pb-6 text-muted-foreground">{f.a}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CONTACTO */}
         <section id="contacto" className="scroll-mt-24 px-5 py-10">
           <Divider />
