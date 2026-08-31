@@ -146,19 +146,6 @@ function Index() {
             </h2>
           </div>
 
-          <div className="relative mt-8 sm:mt-10">
-            <div className="mx-auto w-full max-w-[1920px] px-0 sm:px-5 lg:px-10">
-              <div className="relative overflow-hidden rounded-none sm:rounded-2xl bg-transparent">
-                <img
-                  src={getAssetUrl(corazonBAsset.url)}
-                  alt="Corazón Solar - Astrología para la nueva era"
-                  className="w-full object-cover object-center"
-                  style={{ aspectRatio: "1750/525" }}
-                />
-              </div>
-            </div>
-          </div>
-
         </section>
 
 
