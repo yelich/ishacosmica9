@@ -140,6 +140,9 @@ function Index() {
               <br />
               &nbsp;Los simbolos pueden ayudarte a leerla.
             </h1>
+            <h2 className="mx-auto mt-6 max-w-3xl font-display text-xl sm:text-2xl lg:text-3xl">
+              ¡Hola! Soy <span className="text-gold-gradient">Judith Bentolila</span> — Ishacósmica
+            </h2>
           </div>
 
           <div className="relative mt-8 sm:mt-10">
@@ -179,8 +182,7 @@ function Index() {
             </div>
             <div>
               <h2 className="font-display text-3xl sm:text-4xl">
-                ¡Hola! Soy <span className="text-gold-gradient">Judith Bentolila</span> —
-                Ishacósmica
+                Te acompaño a leer tu historia
               </h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
