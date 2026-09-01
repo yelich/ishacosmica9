@@ -416,12 +416,49 @@ function Index() {
               {SESIONES.map((s) => (
                 <article
                   key={s.titulo}
-                  className="card-mystic rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1"
+                  className="card-mystic flex flex-col rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1"
                 >
                   <h3 className="font-display text-xl text-gold-gradient">{s.titulo}</h3>
                   <p className="mt-3 text-muted-foreground">{s.texto}</p>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-block w-fit rounded-full bg-primary px-7 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+                  >
+                    Agenda
+                  </a>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TALLERES */}
+        <section id="talleres" className="scroll-mt-32 px-5 py-14 sm:py-16">
+          <Divider />
+          <div className="mx-auto max-w-5xl text-center">
+            <h2 className="font-display text-3xl sm:text-4xl">
+              Talleres y <span className="text-gold-gradient">experiencias</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Propuestas online y presenciales para aprender Astrología, Tarot y pensamiento
+              simbólico en comunidad. Muy pronto vas a encontrar aquí los próximos encuentros.
+            </p>
+            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-dashed border-primary/40 bg-black/20 p-10 backdrop-blur-sm">
+              <p className="font-display text-xl text-gold-gradient">Próximamente</p>
+              <p className="mt-3 text-muted-foreground">
+                Estoy preparando nuevos talleres online y presenciales. Sumate a la comunidad para
+                enterarte primero de las fechas.
+              </p>
+              <a
+                href={TELEGRAM}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-7 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Quiero enterarme
+              </a>
             </div>
           </div>
         </section>
