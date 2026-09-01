@@ -153,6 +153,12 @@ function Index() {
                 {n.label}
               </a>
             ))}
+            <a
+              href="#servicios"
+              className="rounded-full bg-primary px-6 py-2 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Reserva
+            </a>
           </nav>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-border/40 px-5 py-2 text-sm lg:hidden">
@@ -165,6 +171,12 @@ function Index() {
               {n.label}
             </a>
           ))}
+          <a
+            href="#servicios"
+            className="rounded-full bg-primary px-5 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Reserva
+          </a>
         </nav>
       </header>
 
@@ -333,25 +345,27 @@ function Index() {
             </div>
 
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-center backdrop-blur-sm sm:p-10">
-              <p className="text-lg text-muted-foreground sm:text-xl">
-                Corazón Solar nació como un espacio para reunir personas interesadas en otra manera
-                de acercarse a la astrología.
-              </p>
-              <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
-                Una Astrología donde el conocimiento dialogue con el arte, la literatura, el tarot,
-                los símbolos y la experiencia personal.
-              </p>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Corazón Solar nació como un espacio para reunir personas interesadas en otra
+                  manera de acercarse a la astrología.
+                </p>
+                <p>
+                  Una Astrología donde el conocimiento dialogue con el arte, la literatura, el
+                  tarot, los símbolos y la experiencia personal.
+                </p>
+              </div>
 
-              <ul className="mt-8 grid justify-items-center gap-3 text-foreground sm:grid-cols-2">
+              <ul className="mx-auto mt-8 grid w-fit justify-items-start gap-3 text-muted-foreground sm:grid-cols-2 sm:gap-x-10">
                 {["Clases.", "Encuentros.", "Material de estudio.", "Investigación.", "Reflexión.", "Comunidad."].map((item) => (
-                  <li key={item} className="flex items-center justify-center gap-3 text-base sm:text-lg">
+                  <li key={item} className="flex items-center gap-3">
                     <span className="text-primary">✦</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-8 text-lg text-foreground sm:text-xl">
+              <p className="mt-8 text-muted-foreground">
                 Y, sobre todo, la posibilidad de seguir aprendiendo juntos.
               </p>
             </div>
