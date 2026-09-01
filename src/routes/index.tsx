@@ -345,7 +345,7 @@ function Index() {
             </div>
 
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-center backdrop-blur-sm sm:p-10">
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-justify text-muted-foreground">
                 <p>
                   Corazón Solar nació como un espacio para reunir personas interesadas en otra
                   manera de acercarse a la astrología.
@@ -365,7 +365,7 @@ function Index() {
                 ))}
               </ul>
 
-              <p className="mt-8 text-muted-foreground">
+              <p className="mt-8 text-justify text-muted-foreground">
                 Y, sobre todo, la posibilidad de seguir aprendiendo juntos.
               </p>
             </div>
