@@ -34,7 +34,10 @@ const NAV = [
   { id: "sobre-mi", label: "Sobre Mí" },
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
+  { id: "talleres", label: "Talleres" },
 ];
+
+const CALENDLY = "https://calendly.com/judyben9/30min";
 
 const METODOLOGIA = [
   "No me interesa enseñarte conceptos para que los memorices, sino que descubras cómo una carta natal dialoga con un mito o cómo un tránsito abre una pregunta.",
@@ -57,7 +60,7 @@ const CAMINOS = [
     texto:
       "Aprender Astrología es aprender a mirar. Integro literatura, arte, Tarot, geometría sagrada y pensamiento simbólico para ir más allá de los conceptos.",
     cta: "Conocé las propuestas",
-    href: "#metodologia",
+    href: "#talleres",
   },
   {
     kicker: "Ser parte",
