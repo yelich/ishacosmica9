@@ -34,7 +34,10 @@ const NAV = [
   { id: "sobre-mi", label: "Sobre Mí" },
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
+  { id: "talleres", label: "Talleres" },
 ];
+
+const CALENDLY = "https://calendly.com/judyben9/30min";
 
 const METODOLOGIA = [
   "No me interesa enseñarte conceptos para que los memorices, sino que descubras cómo una carta natal dialoga con un mito o cómo un tránsito abre una pregunta.",
@@ -57,7 +60,7 @@ const CAMINOS = [
     texto:
       "Aprender Astrología es aprender a mirar. Integro literatura, arte, Tarot, geometría sagrada y pensamiento simbólico para ir más allá de los conceptos.",
     cta: "Conocé las propuestas",
-    href: "#metodologia",
+    href: "#talleres",
   },
   {
     kicker: "Ser parte",
@@ -150,6 +153,12 @@ function Index() {
                 {n.label}
               </a>
             ))}
+            <a
+              href="#servicios"
+              className="rounded-full bg-primary px-6 py-2 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Reserva
+            </a>
           </nav>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-border/40 px-5 py-2 text-sm lg:hidden">
@@ -162,6 +171,12 @@ function Index() {
               {n.label}
             </a>
           ))}
+          <a
+            href="#servicios"
+            className="rounded-full bg-primary px-5 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Reserva
+          </a>
         </nav>
       </header>
 
@@ -330,25 +345,27 @@ function Index() {
             </div>
 
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-center backdrop-blur-sm sm:p-10">
-              <p className="text-lg text-muted-foreground sm:text-xl">
-                Corazón Solar nació como un espacio para reunir personas interesadas en otra manera
-                de acercarse a la astrología.
-              </p>
-              <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
-                Una Astrología donde el conocimiento dialogue con el arte, la literatura, el tarot,
-                los símbolos y la experiencia personal.
-              </p>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Corazón Solar nació como un espacio para reunir personas interesadas en otra
+                  manera de acercarse a la astrología.
+                </p>
+                <p>
+                  Una Astrología donde el conocimiento dialogue con el arte, la literatura, el
+                  tarot, los símbolos y la experiencia personal.
+                </p>
+              </div>
 
-              <ul className="mt-8 grid justify-items-center gap-3 text-foreground sm:grid-cols-2">
+              <ul className="mx-auto mt-8 grid w-fit justify-items-start gap-3 text-muted-foreground sm:grid-cols-2 sm:gap-x-10">
                 {["Clases.", "Encuentros.", "Material de estudio.", "Investigación.", "Reflexión.", "Comunidad."].map((item) => (
-                  <li key={item} className="flex items-center justify-center gap-3 text-base sm:text-lg">
+                  <li key={item} className="flex items-center gap-3">
                     <span className="text-primary">✦</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-8 text-lg text-foreground sm:text-xl">
+              <p className="mt-8 text-muted-foreground">
                 Y, sobre todo, la posibilidad de seguir aprendiendo juntos.
               </p>
             </div>
@@ -399,12 +416,49 @@ function Index() {
               {SESIONES.map((s) => (
                 <article
                   key={s.titulo}
-                  className="card-mystic rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1"
+                  className="card-mystic flex flex-col rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1"
                 >
                   <h3 className="font-display text-xl text-gold-gradient">{s.titulo}</h3>
                   <p className="mt-3 text-muted-foreground">{s.texto}</p>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-block w-fit rounded-full bg-primary px-7 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+                  >
+                    Agenda
+                  </a>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TALLERES */}
+        <section id="talleres" className="scroll-mt-32 px-5 py-14 sm:py-16">
+          <Divider />
+          <div className="mx-auto max-w-5xl text-center">
+            <h2 className="font-display text-3xl sm:text-4xl">
+              Talleres y <span className="text-gold-gradient">experiencias</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Propuestas online y presenciales para aprender Astrología, Tarot y pensamiento
+              simbólico en comunidad. Muy pronto vas a encontrar aquí los próximos encuentros.
+            </p>
+            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-dashed border-primary/40 bg-black/20 p-10 backdrop-blur-sm">
+              <p className="font-display text-xl text-gold-gradient">Próximamente</p>
+              <p className="mt-3 text-muted-foreground">
+                Estoy preparando nuevos talleres online y presenciales. Sumate a la comunidad para
+                enterarte primero de las fechas.
+              </p>
+              <a
+                href={TELEGRAM}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-7 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Quiero enterarme
+              </a>
             </div>
           </div>
         </section>
