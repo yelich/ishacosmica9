@@ -87,7 +87,7 @@ const SESIONES = [
     texto: "Lectura simbólica para iluminar preguntas y movimientos internos.",
   },
   {
-    titulo: "Astrología + Tarot + Acompañamiento",
+    titulo: "Reiki y Energia",
     texto: "Proceso de varios encuentros para diseñar un plan de acción consciente.",
   },
 ];
