@@ -193,7 +193,7 @@ function Index() {
     setStatus("submitting");
     setMessage("");
     try {
-      const result = await subscribe({ email, source: "cuadernillo-sol-luna-zodiaco" });
+      const result = await subscribe({ data: { email, source: "cuadernillo-sol-luna-zodiaco" } });
       setStatus("success");
       setMessage("¡Listo! Abrí el enlace para descargar tu cuadernillo.");
       window.open(result.downloadUrl, "_blank", "noopener,noreferrer");
