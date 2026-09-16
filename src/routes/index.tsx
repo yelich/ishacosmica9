@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { useState } from "react";
 
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
+import { subscribeToLeadMagnet } from "@/lib/lead-magnet.functions";
 import { getAssetUrl } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/")({
@@ -36,6 +39,7 @@ const NAV = [
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
   { id: "talleres", label: "Talleres" },
+  { id: "cuadernillo", label: "Regalo" },
 ];
 
 const CALENDLY = "https://calendly.com/judyben9/30min";
@@ -179,6 +183,29 @@ function Divider() {
 
 
 function Index() {
+  const [email, setEmail] = useState("");
+  const [downloadUrl, setDownloadUrl] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+  const subscribe = useServerFn(subscribeToLeadMagnet);
+
+  const handleCuadernilloSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus("submitting");
+    setMessage("");
+    setDownloadUrl("");
+    try {
+      const result = await subscribe({ data: { email, source: "cuadernillo-sol-luna-zodiaco" } });
+      setStatus("success");
+      setDownloadUrl(result.downloadUrl);
+      setMessage("¡Listo! Tu cuadernillo está listo.");
+      window.open(result.downloadUrl, "_blank", "noopener,noreferrer");
+    } catch (err) {
+      setStatus("error");
+      setMessage(err instanceof Error ? err.message : "Algo salió mal. Intentá de nuevo.");
+    }
+  };
 
   return (
     <div className="relative min-h-screen scroll-smooth overflow-x-hidden bg-background font-sans text-foreground">
@@ -593,6 +620,64 @@ function Index() {
               >
                 Quiero enterarme
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* CUADERNILLO GRATUITO */}
+        <section id="cuadernillo" className="scroll-mt-32 px-5 py-14 sm:py-16">
+          <div className="mx-auto max-w-2xl">
+            <div className="card-mystic rounded-3xl p-8 text-center sm:p-12">
+              <span className="text-xs uppercase tracking-[0.25em] text-primary/80">Regalo de bienvenida</span>
+              <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+                Sol y Luna en el <span className="text-gold-gradient">Zodíaco</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Un cuadernillo gratuito para empezar a leer tu carta desde el Sol y la Luna. Dejá
+                tu email y descargalo ahora.
+              </p>
+              <form onSubmit={handleCuadernilloSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <label htmlFor="email-cuadernillo" className="sr-only">
+                  Email
+                </label>
+                <input
+                  id="email-cuadernillo"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="tu@email.com"
+                  required
+                  disabled={status === "submitting" || status === "success"}
+                  className="flex-1 rounded-full border border-input bg-background/60 px-5 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-60"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "submitting" || status === "success"}
+                  className="rounded-full bg-primary px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+                >
+                  {status === "submitting" ? "Enviando..." : "Descargar"}
+                </button>
+              </form>
+              {message && (
+                <div className="mt-4 space-y-3">
+                  <p className={`text-sm ${status === "error" ? "text-destructive" : "text-primary"}`}>
+                    {message}
+                  </p>
+                  {status === "success" && downloadUrl && (
+                    <a
+                      href={downloadUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block rounded-full border border-primary/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.12em] text-primary transition-colors hover:bg-primary/10"
+                    >
+                      Abrir cuadernillo
+                    </a>
+                  )}
+                </div>
+              )}
+              <p className="mt-5 text-xs text-muted-foreground">
+                No comparto tu email. Te escribo solo con novedades de la Comunidad Corazón Solar.
+              </p>
             </div>
           </div>
         </section>
