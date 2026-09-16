@@ -182,6 +182,26 @@ function Divider() {
 
 
 function Index() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+  const subscribe = useServerFn(subscribeToLeadMagnet);
+
+  const handleCuadernilloSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus("submitting");
+    setMessage("");
+    try {
+      const result = await subscribe({ email, source: "cuadernillo-sol-luna-zodiaco" });
+      setStatus("success");
+      setMessage("¡Listo! Abrí el enlace para descargar tu cuadernillo.");
+      window.open(result.downloadUrl, "_blank", "noopener,noreferrer");
+    } catch (err) {
+      setStatus("error");
+      setMessage(err instanceof Error ? err.message : "Algo salió mal. Intentá de nuevo.");
+    }
+  };
 
   return (
     <div className="relative min-h-screen scroll-smooth overflow-x-hidden bg-background font-sans text-foreground">
