@@ -208,14 +208,16 @@ function Index() {
               </a>
             ))}
             <a
-              href="#servicios"
+              href={waLink("¡Hola Judy! Me gustaría reservar una sesión.")}
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-primary px-6 py-2 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Reserva
+              Reservá
             </a>
           </nav>
         </div>
-        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-border/40 px-5 py-2 text-sm lg:hidden">
+        <nav className="flex items-center justify-center gap-x-4 overflow-x-auto border-t border-border/40 px-5 py-2 text-sm whitespace-nowrap lg:hidden">
           {NAV.map((n) => (
             <a
               key={n.id}
@@ -226,10 +228,12 @@ function Index() {
             </a>
           ))}
           <a
-            href="#servicios"
-            className="rounded-full bg-primary px-5 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+            href={waLink("¡Hola Judy! Me gustaría reservar una sesión.")}
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-full bg-primary px-4 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Reserva
+            Reservá
           </a>
         </nav>
       </header>
@@ -250,9 +254,8 @@ function Index() {
                 </span>
               </h1>
               <p className="mt-6 text-muted-foreground">
-                Astrología para la Nueva Era. Acompaño procesos de transformación y
-                autoconocimiento integrando Astrología, Tarot, literatura y herramientas de
-                consciencia.
+                Acompaño procesos de transformación y autoconocimiento integrando Astrología,
+                Tarot, literatura y herramientas de consciencia.
               </p>
               <div className="mt-7 rounded-2xl border border-border/40 bg-black/25 p-6 text-left backdrop-blur-sm">
                 <p className="text-muted-foreground">
@@ -424,6 +427,46 @@ function Index() {
               </p>
             </div>
 
+            <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left md:grid-cols-2">
+              <article className="card-mystic flex h-full flex-col rounded-3xl p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Gratuito</p>
+                <h3 className="mt-3 font-display text-2xl text-gold-gradient">
+                  Canal de Telegram
+                </h3>
+                <p className="mt-4 mb-7 text-muted-foreground">
+                  Clima astrológico, reflexiones, avisos de talleres y contenidos abiertos para
+                  quienes quieren empezar a mirar el cielo de otra manera.
+                </p>
+                <a
+                  href={TELEGRAM}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto inline-block rounded-full border border-primary/50 px-7 py-3 text-center text-xs font-medium uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary/10"
+                >
+                  Sumate al canal
+                </a>
+              </article>
+              <article className="card-mystic flex h-full flex-col rounded-3xl p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Membresía</p>
+                <h3 className="mt-3 font-display text-2xl text-gold-gradient">
+                  Comunidad Corazón Solar
+                </h3>
+                <p className="mt-4 mb-7 text-muted-foreground">
+                  Un espacio de formación y encuentro para quienes desean profundizar en
+                  Astrología, Tarot, arte y pensamiento simbólico. Incluye clases, encuentros en
+                  vivo, materiales de estudio y acceso a contenidos exclusivos.
+                </p>
+                <a
+                  href={waLink("¡Hola Judy! Quiero información sobre la membresía Comunidad Corazón Solar.")}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  Quiero información
+                </a>
+              </article>
+            </div>
+
             <div id="manifiesto" className="mx-auto mt-14 max-w-4xl rounded-3xl border border-primary/40 bg-black/30 p-9 text-center backdrop-blur-sm sm:p-14">
               <h3 className="font-display text-3xl sm:text-4xl">
                 Nuestro <span className="text-gold-gradient">Manifiesto</span>
@@ -452,6 +495,7 @@ function Index() {
             >
               Quiero unirme a la comunidad
             </a>
+
           </div>
         </section>
 
