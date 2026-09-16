@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
@@ -23,8 +22,10 @@ export const Route = createFileRoute("/")({
           "Astrología simbólica, Tarot y literatura. Sesiones individuales, clases y la comunidad Corazón Solar.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://judybentolila.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://judybentolila.com/" }],
   }),
   component: Index,
 });
@@ -77,24 +78,50 @@ const SESIONES = [
     titulo: "Carta Natal",
     texto:
       "Lectura profunda de tu mapa para comprender recursos, dinámicas y procesos personales.",
+    paraQuien: "Para quien quiere conocerse desde la raíz, por primera vez o en profundidad.",
+    incluye: "Lectura personalizada de tu carta + espacio de preguntas + grabación del encuentro.",
+    modalidad: "Online o presencial · 90 minutos aprox.",
+    teLlevas: "Una comprensión clara de tus recursos, tus desafíos y tus ciclos personales.",
   },
   {
     titulo: "Revolución Solar",
     texto: "Una mirada sobre el ciclo anual que comienza en cada vuelta al Sol.",
+    paraQuien: "Para quien ya conoce su carta natal y quiere leer el año que comienza.",
+    incluye: "Lectura del año solar + tránsitos principales + grabación del encuentro.",
+    modalidad: "Online o presencial · 75 minutos aprox.",
+    teLlevas: "Un mapa del tiempo que se abre y de los temas que pide tu año.",
   },
   {
     titulo: "Tarot",
     texto: "Lectura simbólica para iluminar preguntas y movimientos internos.",
+    paraQuien: "Para quien atraviesa una pregunta concreta o un momento de decisión.",
+    incluye: "Tirada simbólica en torno a tu consulta + interpretación conversada.",
+    modalidad: "Online o presencial · 60 minutos aprox.",
+    teLlevas: "Otra perspectiva sobre tu pregunta y posibles caminos para recorrer.",
   },
   {
-    titulo: "Reiki y Energia",
-    texto: "Proceso de varios encuentros para diseñar un plan de acción consciente.",
+    titulo: "Astrología + Coaching",
+    texto:
+      "Proceso de tres encuentros para comprender tu momento vital, reconocer patrones y diseñar un plan de acción consciente.",
+    paraQuien: "Para quien quiere pasar de la comprensión a la acción, con acompañamiento.",
+    incluye: "Tres encuentros + ejercicios entre sesiones + seguimiento personalizado.",
+    modalidad: "Online o presencial · 3 encuentros de 75 minutos.",
+    teLlevas: "Un plan de acción propio, concreto y sostenible en el tiempo.",
+  },
+  {
+    titulo: "Reiki y Activación Energética",
+    texto:
+      "Encuentros destinados a armonizar la energía, liberar bloqueos y acompañar procesos de transformación interior.",
+    paraQuien: "Para quien necesita descanso, orden interno y acompañamiento energético.",
+    incluye: "Sesión de armonización energética + registro de lo trabajado.",
+    modalidad: "Presencial o a distancia · 60 minutos aprox.",
+    teLlevas: "Mayor calma, claridad y disponibilidad para tu propio proceso.",
   },
 ];
 
 const REDES = [
   { label: "Instagram", url: "https://www.instagram.com/ishacosmica" },
-  { label: "WhatsApp", url: "https://wa.me/5495411979623" },
+  { label: "WhatsApp", url: "https://wa.me/5491161979623" },
   { label: "Telegram", url: "https://t.me/+laZUpJV0Skk2MDMx" },
   {
     label: "TikTok",
@@ -112,6 +139,34 @@ const REDES = [
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
 
+const WHATSAPP = "https://wa.me/5491161979623";
+
+const waLink = (mensaje: string) => `${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+const LINEAS_TALLERES = [
+  {
+    titulo: "Astrología Básica y Avanzada",
+    texto:
+      "Formación por niveles para aprender a leer una carta natal con criterio propio.",
+  },
+  {
+    titulo: "Tarot Evolutivo",
+    texto: "El Tarot como lenguaje simbólico de procesos, no como oráculo de destinos.",
+  },
+  {
+    titulo: "Astrología, literatura y arte",
+    texto: "Mitos, relatos e imágenes como puertas de entrada al pensamiento simbólico.",
+  },
+  {
+    titulo: "Geometría sagrada y consciencia",
+    texto: "Formas, proporciones y patrones como caminos de comprensión interior.",
+  },
+  {
+    titulo: "Talleres especiales y ceremonias",
+    texto: "Encuentros puntuales para acompañar lunaciones, ciclos y momentos del año.",
+  },
+];
+
 function Divider() {
   return (
     <div className="mx-auto mb-12 flex max-w-xs items-center gap-4">
@@ -124,7 +179,6 @@ function Divider() {
 
 
 function Index() {
-  const [subscribed, setSubscribed] = useState(false);
 
   return (
     <div className="relative min-h-screen scroll-smooth overflow-x-hidden bg-background font-sans text-foreground">
@@ -154,14 +208,16 @@ function Index() {
               </a>
             ))}
             <a
-              href="#servicios"
+              href={waLink("¡Hola Judy! Me gustaría reservar una sesión.")}
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-primary px-6 py-2 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Reserva
+              Reservá
             </a>
           </nav>
         </div>
-        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-border/40 px-5 py-2 text-sm lg:hidden">
+        <nav className="flex items-center justify-center gap-x-4 overflow-x-auto border-t border-border/40 px-5 py-2 text-sm whitespace-nowrap lg:hidden">
           {NAV.map((n) => (
             <a
               key={n.id}
@@ -172,10 +228,12 @@ function Index() {
             </a>
           ))}
           <a
-            href="#servicios"
-            className="rounded-full bg-primary px-5 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+            href={waLink("¡Hola Judy! Me gustaría reservar una sesión.")}
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-full bg-primary px-4 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Reserva
+            Reservá
           </a>
         </nav>
       </header>
@@ -196,9 +254,8 @@ function Index() {
                 </span>
               </h1>
               <p className="mt-6 text-muted-foreground">
-                Astrología para la Nueva Era. Acompaño procesos de transformación y
-                autoconocimiento integrando Astrología, Tarot, literatura y herramientas de
-                consciencia.
+                Acompaño procesos de transformación y autoconocimiento integrando Astrología,
+                Tarot, literatura y herramientas de consciencia.
               </p>
               <div className="mt-7 rounded-2xl border border-border/40 bg-black/25 p-6 text-left backdrop-blur-sm">
                 <p className="text-muted-foreground">
@@ -370,6 +427,46 @@ function Index() {
               </p>
             </div>
 
+            <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left md:grid-cols-2">
+              <article className="card-mystic flex h-full flex-col rounded-3xl p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Gratuito</p>
+                <h3 className="mt-3 font-display text-2xl text-gold-gradient">
+                  Canal de Telegram
+                </h3>
+                <p className="mt-4 mb-7 text-muted-foreground">
+                  Clima astrológico, reflexiones, avisos de talleres y contenidos abiertos para
+                  quienes quieren empezar a mirar el cielo de otra manera.
+                </p>
+                <a
+                  href={TELEGRAM}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto inline-block rounded-full border border-primary/50 px-7 py-3 text-center text-xs font-medium uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary/10"
+                >
+                  Sumate al canal
+                </a>
+              </article>
+              <article className="card-mystic flex h-full flex-col rounded-3xl p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Membresía</p>
+                <h3 className="mt-3 font-display text-2xl text-gold-gradient">
+                  Comunidad Corazón Solar
+                </h3>
+                <p className="mt-4 mb-7 text-muted-foreground">
+                  Un espacio de formación y encuentro para quienes desean profundizar en
+                  Astrología, Tarot, arte y pensamiento simbólico. Incluye clases, encuentros en
+                  vivo, materiales de estudio y acceso a contenidos exclusivos.
+                </p>
+                <a
+                  href={waLink("¡Hola Judy! Quiero información sobre la membresía Comunidad Corazón Solar.")}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  Quiero información
+                </a>
+              </article>
+            </div>
+
             <div id="manifiesto" className="mx-auto mt-14 max-w-4xl rounded-3xl border border-primary/40 bg-black/30 p-9 text-center backdrop-blur-sm sm:p-14">
               <h3 className="font-display text-3xl sm:text-4xl">
                 Nuestro <span className="text-gold-gradient">Manifiesto</span>
@@ -398,6 +495,7 @@ function Index() {
             >
               Quiero unirme a la comunidad
             </a>
+
           </div>
         </section>
 
@@ -410,7 +508,11 @@ function Index() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Cada encuentro comienza con una pregunta diferente. Mi trabajo es acompañarte para
-              que la respuesta no venga desde afuera, sino desde dentro tuyo.
+              que la respuesta no venga desde afuera, sino desde tu interior.
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-primary/85">
+              Toda sesión comienza con una entrevista inicial de 30 minutos, sin costo, para
+              elegir juntas la propuesta que mejor te acompaña.
             </p>
             <div className="mt-10 grid gap-6 text-left sm:grid-cols-2">
               {SESIONES.map((s) => (
@@ -420,14 +522,37 @@ function Index() {
                 >
                   <h3 className="font-display text-xl text-gold-gradient">{s.titulo}</h3>
                   <p className="mt-3 text-muted-foreground">{s.texto}</p>
-                  <a
-                    href={CALENDLY}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-block w-fit rounded-full bg-primary px-7 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Agenda
-                  </a>
+                  <dl className="mt-5 space-y-2.5 text-sm">
+                    {[
+                      ["Para quién", s.paraQuien],
+                      ["Incluye", s.incluye],
+                      ["Modalidad", s.modalidad],
+                      ["Te llevás", s.teLlevas],
+                    ].map(([k, v]) => (
+                      <div key={k}>
+                        <dt className="text-xs uppercase tracking-[0.2em] text-primary/80">{k}</dt>
+                        <dd className="mt-1 text-muted-foreground">{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={CALENDLY}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block w-fit rounded-full bg-primary px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+                    >
+                      Solicitá una entrevista inicial
+                    </a>
+                    <a
+                      href={waLink(`¡Hola Judy! Quiero consultar disponibilidad para ${s.titulo}.`)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block w-fit rounded-full border border-primary/50 px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary/10"
+                    >
+                      Consultá disponibilidad
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
@@ -443,13 +568,22 @@ function Index() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Propuestas online y presenciales para aprender Astrología, Tarot y pensamiento
-              simbólico en comunidad. Muy pronto vas a encontrar aquí los próximos encuentros.
+              simbólico en comunidad. Estas son mis líneas de formación; las fechas de cada
+              edición se anuncian en el canal y en la Comunidad.
             </p>
+            <div className="mt-10 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
+              {LINEAS_TALLERES.map((t) => (
+                <article key={t.titulo} className="card-mystic h-full rounded-3xl p-7">
+                  <h3 className="font-display text-xl text-gold-gradient">{t.titulo}</h3>
+                  <p className="mt-3 text-muted-foreground">{t.texto}</p>
+                </article>
+              ))}
+            </div>
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-dashed border-primary/40 bg-black/20 p-10 backdrop-blur-sm">
-              <p className="font-display text-xl text-gold-gradient">Próximamente</p>
+              <p className="font-display text-xl text-gold-gradient">Próximas fechas</p>
               <p className="mt-3 text-muted-foreground">
-                Estoy preparando nuevos talleres online y presenciales. Sumate a la comunidad para
-                enterarte primero de las fechas.
+                Estoy preparando las próximas ediciones, online y presenciales. Sumate al canal
+                para enterarte primero.
               </p>
               <a
                 href={TELEGRAM}
@@ -496,38 +630,19 @@ function Index() {
 
           <div className="mx-auto mt-12 max-w-xl rounded-3xl border border-border/40 bg-black/25 p-8 backdrop-blur-sm">
             <p className="font-display text-xl text-gold-gradient">
-              Únete a la Comunidad Corazón Solar
+              Sumate a la Comunidad Corazón Solar
             </p>
-            {subscribed ? (
-              <p className="mt-4 text-sm text-muted-foreground">
-                ¡Gracias! Pronto vas a recibir novedades.
-              </p>
-            ) : (
-              <form
-                className="mt-5 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto]"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubscribed(true);
-                }}
-              >
-                <label htmlFor="newsletter" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="newsletter"
-                  type="email"
-                  required
-                  placeholder="tu@email.com"
-                  className="w-full rounded-full border border-input bg-black/30 px-5 py-3 text-sm outline-none focus:border-primary"
-                />
-                <button
-                  type="submit"
-                  className="shrink-0 rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                >
-                  Unirse
-                </button>
-              </form>
-            )}
+            <p className="mt-3 text-sm text-muted-foreground">
+              Novedades, clima astrológico y próximos talleres en el canal de Telegram.
+            </p>
+            <a
+              href={TELEGRAM}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Sumate al canal
+            </a>
           </div>
 
           <p className="mt-12 font-display tracking-[0.2em] text-gold-gradient uppercase">
@@ -537,7 +652,16 @@ function Index() {
             Maestra de Astrología · Taróloga · Profesora de Literatura | Creadora de Comunidad
             Corazón Solar.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">JudyBentolila.com</p>
+          <p className="mt-2 text-sm">
+            <a
+              href="https://judybentolila.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              JudyBentolila.com
+            </a>
+          </p>
         </div>
       </footer>
     </div>
