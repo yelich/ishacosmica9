@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
@@ -178,7 +177,6 @@ function Divider() {
 
 
 function Index() {
-  const [subscribed, setSubscribed] = useState(false);
 
   return (
     <div className="relative min-h-screen scroll-smooth overflow-x-hidden bg-background font-sans text-foreground">
