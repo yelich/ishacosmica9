@@ -15,6 +15,7 @@ export const subscribeToLeadMagnet = createServerFn({ method: "POST" })
       .parse(data),
   )
   .handler(async ({ data }) => {
+    console.log("[lead-magnet] subscribing:", data.email);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     // Guardamos o actualizamos el email y marcamos la descarga.
@@ -30,9 +31,10 @@ export const subscribeToLeadMagnet = createServerFn({ method: "POST" })
       );
 
     if (upsertError) {
-      console.error("Error guardando suscripción:", upsertError);
+      console.error("[lead-magnet] upsert error:", upsertError);
       throw new Error("No pudimos procesar tu solicitud. Intentá de nuevo más tarde.");
     }
+    console.log("[lead-magnet] subscription saved");
 
     // Generamos una URL firmada para descargar el cuadernillo.
     const { data: signedData, error: signedError } = await supabaseAdmin.storage
