@@ -22,8 +22,10 @@ export const Route = createFileRoute("/")({
           "Astrología simbólica, Tarot y literatura. Sesiones individuales, clases y la comunidad Corazón Solar.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://judybentolila.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://judybentolila.com/" }],
   }),
   component: Index,
 });
