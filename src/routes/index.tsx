@@ -659,11 +659,21 @@ function Index() {
                 </button>
               </form>
               {message && (
-                <p
-                  className={`mt-4 text-sm ${status === "error" ? "text-destructive" : "text-primary"}`}
-                >
-                  {message}
-                </p>
+                <div className="mt-4 space-y-3">
+                  <p className={`text-sm ${status === "error" ? "text-destructive" : "text-primary"}`}>
+                    {message}
+                  </p>
+                  {status === "success" && downloadUrl && (
+                    <a
+                      href={downloadUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block rounded-full border border-primary/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.12em] text-primary transition-colors hover:bg-primary/10"
+                    >
+                      Abrir cuadernillo
+                    </a>
+                  )}
+                </div>
               )}
               <p className="mt-5 text-xs text-muted-foreground">
                 No comparto tu email. Te escribo solo con novedades de la Comunidad Corazón Solar.
