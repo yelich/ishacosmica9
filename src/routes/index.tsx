@@ -39,6 +39,7 @@ const NAV = [
   { id: "servicios", label: "Servicios" },
   { id: "comunidad", label: "Comunidad" },
   { id: "talleres", label: "Talleres" },
+  { id: "cuadernillo", label: "Regalo" },
 ];
 
 const CALENDLY = "https://calendly.com/judyben9/30min";
