@@ -184,6 +184,7 @@ function Divider() {
 
 function Index() {
   const [email, setEmail] = useState("");
+  const [downloadUrl, setDownloadUrl] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const subscribe = useServerFn(subscribeToLeadMagnet);
@@ -193,10 +194,12 @@ function Index() {
     if (!email.trim()) return;
     setStatus("submitting");
     setMessage("");
+    setDownloadUrl("");
     try {
       const result = await subscribe({ data: { email, source: "cuadernillo-sol-luna-zodiaco" } });
       setStatus("success");
-      setMessage("¡Listo! Abrí el enlace para descargar tu cuadernillo.");
+      setDownloadUrl(result.downloadUrl);
+      setMessage("¡Listo! Tu cuadernillo está listo.");
       window.open(result.downloadUrl, "_blank", "noopener,noreferrer");
     } catch (err) {
       setStatus("error");
