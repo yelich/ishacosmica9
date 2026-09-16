@@ -508,7 +508,11 @@ function Index() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Cada encuentro comienza con una pregunta diferente. Mi trabajo es acompañarte para
-              que la respuesta no venga desde afuera, sino desde dentro tuyo.
+              que la respuesta no venga desde afuera, sino desde tu interior.
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-primary/85">
+              Toda sesión comienza con una entrevista inicial de 30 minutos, sin costo, para
+              elegir juntas la propuesta que mejor te acompaña.
             </p>
             <div className="mt-10 grid gap-6 text-left sm:grid-cols-2">
               {SESIONES.map((s) => (
@@ -518,14 +522,37 @@ function Index() {
                 >
                   <h3 className="font-display text-xl text-gold-gradient">{s.titulo}</h3>
                   <p className="mt-3 text-muted-foreground">{s.texto}</p>
-                  <a
-                    href={CALENDLY}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-block w-fit rounded-full bg-primary px-7 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Agenda
-                  </a>
+                  <dl className="mt-5 space-y-2.5 text-sm">
+                    {[
+                      ["Para quién", s.paraQuien],
+                      ["Incluye", s.incluye],
+                      ["Modalidad", s.modalidad],
+                      ["Te llevás", s.teLlevas],
+                    ].map(([k, v]) => (
+                      <div key={k}>
+                        <dt className="text-xs uppercase tracking-[0.2em] text-primary/80">{k}</dt>
+                        <dd className="mt-1 text-muted-foreground">{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={CALENDLY}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block w-fit rounded-full bg-primary px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+                    >
+                      Solicitá una entrevista inicial
+                    </a>
+                    <a
+                      href={waLink(`¡Hola Judy! Quiero consultar disponibilidad para ${s.titulo}.`)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block w-fit rounded-full border border-primary/50 px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary/10"
+                    >
+                      Consultá disponibilidad
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
@@ -541,13 +568,22 @@ function Index() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Propuestas online y presenciales para aprender Astrología, Tarot y pensamiento
-              simbólico en comunidad. Muy pronto vas a encontrar aquí los próximos encuentros.
+              simbólico en comunidad. Estas son mis líneas de formación; las fechas de cada
+              edición se anuncian en el canal y en la Comunidad.
             </p>
+            <div className="mt-10 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
+              {LINEAS_TALLERES.map((t) => (
+                <article key={t.titulo} className="card-mystic h-full rounded-3xl p-7">
+                  <h3 className="font-display text-xl text-gold-gradient">{t.titulo}</h3>
+                  <p className="mt-3 text-muted-foreground">{t.texto}</p>
+                </article>
+              ))}
+            </div>
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-dashed border-primary/40 bg-black/20 p-10 backdrop-blur-sm">
-              <p className="font-display text-xl text-gold-gradient">Próximamente</p>
+              <p className="font-display text-xl text-gold-gradient">Próximas fechas</p>
               <p className="mt-3 text-muted-foreground">
-                Estoy preparando nuevos talleres online y presenciales. Sumate a la comunidad para
-                enterarte primero de las fechas.
+                Estoy preparando las próximas ediciones, online y presenciales. Sumate al canal
+                para enterarte primero.
               </p>
               <a
                 href={TELEGRAM}
@@ -594,38 +630,19 @@ function Index() {
 
           <div className="mx-auto mt-12 max-w-xl rounded-3xl border border-border/40 bg-black/25 p-8 backdrop-blur-sm">
             <p className="font-display text-xl text-gold-gradient">
-              Únete a la Comunidad Corazón Solar
+              Sumate a la Comunidad Corazón Solar
             </p>
-            {subscribed ? (
-              <p className="mt-4 text-sm text-muted-foreground">
-                ¡Gracias! Pronto vas a recibir novedades.
-              </p>
-            ) : (
-              <form
-                className="mt-5 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto]"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubscribed(true);
-                }}
-              >
-                <label htmlFor="newsletter" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="newsletter"
-                  type="email"
-                  required
-                  placeholder="tu@email.com"
-                  className="w-full rounded-full border border-input bg-black/30 px-5 py-3 text-sm outline-none focus:border-primary"
-                />
-                <button
-                  type="submit"
-                  className="shrink-0 rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                >
-                  Unirse
-                </button>
-              </form>
-            )}
+            <p className="mt-3 text-sm text-muted-foreground">
+              Novedades, clima astrológico y próximos talleres en el canal de Telegram.
+            </p>
+            <a
+              href={TELEGRAM}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Sumate al canal
+            </a>
           </div>
 
           <p className="mt-12 font-display tracking-[0.2em] text-gold-gradient uppercase">
@@ -635,7 +652,16 @@ function Index() {
             Maestra de Astrología · Taróloga · Profesora de Literatura | Creadora de Comunidad
             Corazón Solar.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">JudyBentolila.com</p>
+          <p className="mt-2 text-sm">
+            <a
+              href="https://judybentolila.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              JudyBentolila.com
+            </a>
+          </p>
         </div>
       </footer>
     </div>
