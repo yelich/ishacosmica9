@@ -77,24 +77,50 @@ const SESIONES = [
     titulo: "Carta Natal",
     texto:
       "Lectura profunda de tu mapa para comprender recursos, dinámicas y procesos personales.",
+    paraQuien: "Para quien quiere conocerse desde la raíz, por primera vez o en profundidad.",
+    incluye: "Lectura personalizada de tu carta + espacio de preguntas + grabación del encuentro.",
+    modalidad: "Online o presencial · 90 minutos aprox.",
+    teLlevas: "Una comprensión clara de tus recursos, tus desafíos y tus ciclos personales.",
   },
   {
     titulo: "Revolución Solar",
     texto: "Una mirada sobre el ciclo anual que comienza en cada vuelta al Sol.",
+    paraQuien: "Para quien ya conoce su carta natal y quiere leer el año que comienza.",
+    incluye: "Lectura del año solar + tránsitos principales + grabación del encuentro.",
+    modalidad: "Online o presencial · 75 minutos aprox.",
+    teLlevas: "Un mapa del tiempo que se abre y de los temas que pide tu año.",
   },
   {
     titulo: "Tarot",
     texto: "Lectura simbólica para iluminar preguntas y movimientos internos.",
+    paraQuien: "Para quien atraviesa una pregunta concreta o un momento de decisión.",
+    incluye: "Tirada simbólica en torno a tu consulta + interpretación conversada.",
+    modalidad: "Online o presencial · 60 minutos aprox.",
+    teLlevas: "Otra perspectiva sobre tu pregunta y posibles caminos para recorrer.",
   },
   {
-    titulo: "Reiki y Energia",
-    texto: "Proceso de varios encuentros para diseñar un plan de acción consciente.",
+    titulo: "Astrología + Coaching",
+    texto:
+      "Proceso de tres encuentros para comprender tu momento vital, reconocer patrones y diseñar un plan de acción consciente.",
+    paraQuien: "Para quien quiere pasar de la comprensión a la acción, con acompañamiento.",
+    incluye: "Tres encuentros + ejercicios entre sesiones + seguimiento personalizado.",
+    modalidad: "Online o presencial · 3 encuentros de 75 minutos.",
+    teLlevas: "Un plan de acción propio, concreto y sostenible en el tiempo.",
+  },
+  {
+    titulo: "Reiki y Activación Energética",
+    texto:
+      "Encuentros destinados a armonizar la energía, liberar bloqueos y acompañar procesos de transformación interior.",
+    paraQuien: "Para quien necesita descanso, orden interno y acompañamiento energético.",
+    incluye: "Sesión de armonización energética + registro de lo trabajado.",
+    modalidad: "Presencial o a distancia · 60 minutos aprox.",
+    teLlevas: "Mayor calma, claridad y disponibilidad para tu propio proceso.",
   },
 ];
 
 const REDES = [
   { label: "Instagram", url: "https://www.instagram.com/ishacosmica" },
-  { label: "WhatsApp", url: "https://wa.me/5495411979623" },
+  { label: "WhatsApp", url: "https://wa.me/5491161979623" },
   { label: "Telegram", url: "https://t.me/+laZUpJV0Skk2MDMx" },
   {
     label: "TikTok",
@@ -111,6 +137,34 @@ const REDES = [
 ];
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
+
+const WHATSAPP = "https://wa.me/5491161979623";
+
+const waLink = (mensaje: string) => `${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+const LINEAS_TALLERES = [
+  {
+    titulo: "Astrología Básica y Avanzada",
+    texto:
+      "Formación por niveles para aprender a leer una carta natal con criterio propio.",
+  },
+  {
+    titulo: "Tarot Evolutivo",
+    texto: "El Tarot como lenguaje simbólico de procesos, no como oráculo de destinos.",
+  },
+  {
+    titulo: "Astrología, literatura y arte",
+    texto: "Mitos, relatos e imágenes como puertas de entrada al pensamiento simbólico.",
+  },
+  {
+    titulo: "Geometría sagrada y consciencia",
+    texto: "Formas, proporciones y patrones como caminos de comprensión interior.",
+  },
+  {
+    titulo: "Talleres especiales y ceremonias",
+    texto: "Encuentros puntuales para acompañar lunaciones, ciclos y momentos del año.",
+  },
+];
 
 function Divider() {
   return (
