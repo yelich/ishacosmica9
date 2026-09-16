@@ -619,6 +619,54 @@ function Index() {
             </div>
           </div>
         </section>
+
+        {/* CUADERNILLO GRATUITO */}
+        <section id="cuadernillo" className="scroll-mt-32 px-5 py-14 sm:py-16">
+          <div className="mx-auto max-w-2xl">
+            <div className="card-mystic rounded-3xl p-8 text-center sm:p-12">
+              <span className="text-xs uppercase tracking-[0.25em] text-primary/80">Regalo de bienvenida</span>
+              <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+                Sol y Luna en el <span className="text-gold-gradient">Zodíaco</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Un cuadernillo gratuito para empezar a leer tu carta desde el Sol y la Luna. Dejá
+                tu email y descargalo ahora.
+              </p>
+              <form onSubmit={handleCuadernilloSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <label htmlFor="email-cuadernillo" className="sr-only">
+                  Email
+                </label>
+                <input
+                  id="email-cuadernillo"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="tu@email.com"
+                  required
+                  disabled={status === "submitting" || status === "success"}
+                  className="flex-1 rounded-full border border-input bg-background/60 px-5 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-60"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "submitting" || status === "success"}
+                  className="rounded-full bg-primary px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+                >
+                  {status === "submitting" ? "Enviando..." : "Descargar"}
+                </button>
+              </form>
+              {message && (
+                <p
+                  className={`mt-4 text-sm ${status === "error" ? "text-destructive" : "text-primary"}`}
+                >
+                  {message}
+                </p>
+              )}
+              <p className="mt-5 text-xs text-muted-foreground">
+                No comparto tu email. Te escribo solo con novedades de la Comunidad Corazón Solar.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="relative z-10 border-t border-border/60 px-5 py-14">
