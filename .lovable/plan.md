@@ -1,17 +1,17 @@
-# Plan: Que el sitio abra en la dirección principal (sin /lander)
+# Plan: Que judybentolila.com abra tu página de inicio (sin /lander)
 
 ## Qué encontré
-- En el proyecto **no existe ninguna página "/lander"**. La página de inicio ya está en la raíz "/".
-- "/lander" es la dirección típica de las **páginas de estacionamiento de dominio** (por ejemplo GoDaddy u otros registradores). Si al entrar a tu dominio te lleva a `/lander`, significa que el dominio **todavía no apunta a tu sitio**, sino a la página de aviso del registrador.
-- Además, la copia en GitHub Pages se publica bajo `/ishacosmica9/`, que es otra subcarpeta distinta.
+- Tu página de inicio **ya está en la raíz "/"**; en el sitio no existe ninguna página "/lander", así que no hay que cambiar nada en el diseño ni en las páginas.
+- "/lander" es la página de aviso que muestran los registradores (GoDaddy, etc.) cuando un dominio **no apunta a ningún sitio**.
+- Revisé judybentolila.com: hoy **no tiene servidores de nombres respondiendo**, todavía **no está conectado a este proyecto**, y el sitio **aún no está publicado**.
 
 ## Pasos
-1. **Confirmar dónde ves el /lander** (tu dominio propio, GitHub Pages o la dirección de Lovable).
-2. **Publicar el sitio en Lovable** para que exista una versión en vivo en la raíz.
-3. **Conectar tu dominio** a Lovable y, en el panel del registrador, desactivar la página de estacionamiento / reenvío y reemplazar los registros DNS por los que indique Lovable.
-4. **Si usás GitHub Pages con dominio propio**: quitar la subcarpeta `/ishacosmica9/` para que el sitio quede en la raíz.
-5. **Verificar** que `https://tudominio.com/` abra directamente la página de inicio.
+1. **Revisar el dominio en tu registrador**: confirmar que esté activo/renovado y desactivar la página de estacionamiento o el "reenvío" (forwarding) que lleva a /lander.
+2. **Publicar el sitio** en Lovable para que haya una versión en vivo.
+3. **Conectar judybentolila.com** al proyecto desde la tarjeta de conexión de dominio (te la muestro en el chat) y cargar en el registrador los registros que indique.
+4. **Elegir la versión principal** (judybentolila.com o www) para que la otra redirija a ella.
+5. **Verificar** que https://judybentolila.com/ abra directamente la página de inicio, con candado (https).
 
 ## Detalle técnico
-- Paso 4: cambiar `base` en `vite.config.ts` a `/` cuando el deploy de Pages use dominio propio (archivo `CNAME` en `public/`).
-- No hace falta tocar las rutas: `src/routes/index.tsx` ya es `/`.
+- Sin cambios de código: `src/routes/index.tsx` ya responde en `/`.
+- El paso 1 depende de tu cuenta del registrador; yo no puedo entrar ahí.
