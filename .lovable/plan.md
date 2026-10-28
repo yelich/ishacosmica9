@@ -1,51 +1,17 @@
-# Plan: Publicar el sitio en un dominio propio
+# Plan: Que el sitio abra en la dirección principal (sin /lander)
 
-## Objetivo
-Poner el sitio de Corazón Solar / Ishacósmica en vivo con el dominio propio (JudyBentolila.com u otro que elijas), verificando DNS, SSL y que todo funcione correctamente.
+## Qué encontré
+- En el proyecto **no existe ninguna página "/lander"**. La página de inicio ya está en la raíz "/".
+- "/lander" es la dirección típica de las **páginas de estacionamiento de dominio** (por ejemplo GoDaddy u otros registradores). Si al entrar a tu dominio te lleva a `/lander`, significa que el dominio **todavía no apunta a tu sitio**, sino a la página de aviso del registrador.
+- Además, la copia en GitHub Pages se publica bajo `/ishacosmica9/`, que es otra subcarpeta distinta.
 
-## Pasos del plan
+## Pasos
+1. **Confirmar dónde ves el /lander** (tu dominio propio, GitHub Pages o la dirección de Lovable).
+2. **Publicar el sitio en Lovable** para que exista una versión en vivo en la raíz.
+3. **Conectar tu dominio** a Lovable y, en el panel del registrador, desactivar la página de estacionamiento / reenvío y reemplazar los registros DNS por los que indique Lovable.
+4. **Si usás GitHub Pages con dominio propio**: quitar la subcarpeta `/ishacosmica9/` para que el sitio quede en la raíz.
+5. **Verificar** que `https://tudominio.com/` abra directamente la página de inicio.
 
-1. **Confirmar el dominio objetivo**
-   - Verificar si ya tenés registrado `JudyBentolila.com` o si preferís comprarlo ahora.
-   - Si ya lo tenés, preparar el acceso al panel de DNS de tu registrar.
-
-2. **Publicar el sitio por primera vez**
-   - Hacer el deploy inicial en la URL de Lovable para que haya una versión live.
-   - Esto es necesario antes de que cualquier dominio propio sirva contenido.
-
-3. **Conectar el dominio propio**
-   - Agregar `JudyBentolila.com` y `www.JudyBentolila.com` en la configuración de dominios del proyecto.
-   - Seguir el flujo automático de Lovable para conectar un dominio existente.
-   - Si el dominio está en Cloudflare o proxy similar, habilitar el modo proxy durante la configuración.
-
-4. **Configurar DNS en el registrar**
-   - Agregar los registros A y TXT que indique Lovable en tu proveedor de dominio.
-   - Asegurar que no haya registros A antiguos en conflicto.
-   - Esperar la propagación DNS (puede tardar hasta 72 horas, aunque suele ser minutos).
-
-5. **Definir el dominio primario y redirecciones**
-   - Elegir si la versión principal es la raíz (`JudyBentolila.com`) o `www`.
-   - Configurar la otra versión para redireccionar al dominio primario.
-
-6. **Ajustes finales antes o después de publicar**
-   - Actualizar el enlace canónico del sitio a `https://JudyBentolila.com/`.
-   - Generar y subir la imagen OG para compartir en WhatsApp/Instagram.
-   - Reemplazar el PDF de ejemplo del cuadernillo por el definitivo.
-   - Verificar que el link de Spotify apunte a tu perfil o playlist correcta.
-
-7. **Verificación post-publicación**
-   - Probar que `JudyBentolila.com` responde con HTTPS.
-   - Revisar que las secciones, menú, formulario del cuadernillo, WhatsApp y Calendly funcionen.
-   - Validar la imagen OG con una herramienta de preview de redes sociales.
-
-## Decisión pendiente
-
-- ¿Ya tenés registrado `JudyBentolila.com` o lo querés comprar ahora?
-- ¿Querés que la versión principal sea `JudyBentolila.com` o `www.JudyBentolila.com`?
-
-## Detalles técnicos
-
-- El proyecto actualmente no está publicado y no tiene dominios conectados.
-- La visibilidad efectiva del proyecto es pública, por lo que cualquier persona con el link podrá acceder una vez publicado.
-- Para dominios gestionados fuera de Lovable se requieren registros A para `@` y `www` apuntando a `185.158.133.1`, más un registro TXT de verificación `_lovable`.
-- Los cambios de backend (base de datos del cuadernillo) ya están deployados automáticamente.
+## Detalle técnico
+- Paso 4: cambiar `base` en `vite.config.ts` a `/` cuando el deploy de Pages use dominio propio (archivo `CNAME` en `public/`).
+- No hace falta tocar las rutas: `src/routes/index.tsx` ya es `/`.
