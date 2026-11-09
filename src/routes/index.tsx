@@ -14,6 +14,7 @@ import { CUADERNILLO_PATH } from "@/lib/lead-magnet.config";
 import { isEmailFormatValid } from "@/lib/email-validation";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Judy Bentolila · Astrología para la Nueva Era" },
