@@ -6,8 +6,11 @@ import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
+import { Button } from "@/components/ui/button";
 import { subscribeToLeadMagnet } from "@/lib/lead-magnet.functions";
 import { getAssetUrl } from "@/lib/asset-url";
+import { CALENDLY, REDES, TELEGRAM, waLink } from "@/lib/public-links";
+import { CUADERNILLO_PATH } from "@/lib/lead-magnet.config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,8 +44,6 @@ const NAV = [
   { id: "talleres", label: "Talleres" },
   { id: "cuadernillo", label: "Regalo" },
 ];
-
-const CALENDLY = "https://calendly.com/judyben9/30min";
 
 const METODOLOGIA = [
   "No me interesa enseñarte conceptos para que los memorices, sino que descubras cómo una carta natal dialoga con un mito o cómo un tránsito abre una pregunta.",
@@ -123,30 +124,6 @@ const SESIONES = [
   },
 ];
 
-const REDES = [
-  { label: "Instagram", url: "https://www.instagram.com/ishacosmica" },
-  { label: "WhatsApp", url: "https://wa.me/5491161979623" },
-  { label: "Telegram", url: "https://t.me/+laZUpJV0Skk2MDMx" },
-  {
-    label: "TikTok",
-    url: "https://www.tiktok.com/@ishacosmica?_r=1&_d=f2jm03eia3f43d&sec_uid=MS4wLjABAAAAYVVRuBdUgRe4BU8C4Onu3WVCUbjEjuWEEhPIdHH57K5LQNpWdWjgiFxlAtyA2xN2&share_author_id=7075418946085684230&sharer_language=es&source=h5_m&utm_source=copy&utm_campaign=client_share&utm_medium=android",
-  },
-  {
-    label: "YouTube",
-    url: "https://youtube.com/@ishacosmicaencomunidad?si=T9EHBo7Dd6WPWaBC",
-  },
-  {
-    label: "Spotify",
-    url: "https://open.spotify.com/user/judyben-1320?si=Em22U7JMTzWyE44nlW3apQ",
-  },
-];
-
-const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
-
-const WHATSAPP = "https://wa.me/5491161979623";
-
-const waLink = (mensaje: string) => `${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
-
 const LINEAS_TALLERES = [
   {
     titulo: "Astrología Básica y Avanzada",
@@ -191,16 +168,21 @@ function Index() {
 
   const handleCuadernilloSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || status === "submitting") return;
     setStatus("submitting");
     setMessage("");
     setDownloadUrl("");
     try {
-      const result = await subscribe({ data: { email, source: "cuadernillo-sol-luna-zodiaco" } });
+      const result = await subscribe({ data: { email: email.trim(), source: "cuadernillo-sol-luna-zodiaco" } });
       setStatus("success");
       setDownloadUrl(result.downloadUrl);
-      setMessage("¡Listo! Tu cuadernillo está listo.");
-      window.open(result.downloadUrl, "_blank", "noopener,noreferrer");
+      setMessage("¡Listo! Tu email quedó registrado y tu cuadernillo está listo para descargar.");
+      const link = document.createElement("a");
+      link.href = result.downloadUrl;
+      link.download = CUADERNILLO_PATH;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     } catch (err) {
       setStatus("error");
       setMessage(err instanceof Error ? err.message : "Algo salió mal. Intentá de nuevo.");
@@ -630,10 +612,10 @@ function Index() {
             <div className="card-mystic rounded-3xl p-8 text-center sm:p-12">
               <span className="text-xs uppercase tracking-[0.25em] text-primary/80">Regalo de bienvenida</span>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-                Sol y Luna en el <span className="text-gold-gradient">Zodíaco</span>
+                Sol y Luna a través del <span className="text-gold-gradient">Zodíaco</span>
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Un cuadernillo gratuito para empezar a leer tu carta desde el Sol y la Luna. Dejá
+                Un cuadernillo artístico gratuito para colorear y explorar los doce signos. Dejá
                 tu email y descargalo ahora.
               </p>
               <form onSubmit={handleCuadernilloSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -650,28 +632,25 @@ function Index() {
                   disabled={status === "submitting" || status === "success"}
                   className="flex-1 rounded-full border border-input bg-background/60 px-5 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-60"
                 />
-                <button
+                <Button
                   type="submit"
                   disabled={status === "submitting" || status === "success"}
-                  className="rounded-full bg-primary px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="h-auto rounded-full px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] transition-opacity hover:opacity-90 disabled:opacity-60"
                 >
                   {status === "submitting" ? "Enviando..." : "Descargar"}
-                </button>
+                </Button>
               </form>
               {message && (
-                <div className="mt-4 space-y-3">
+                <div className="mt-4 space-y-3" aria-live="polite">
                   <p className={`text-sm ${status === "error" ? "text-destructive" : "text-primary"}`}>
                     {message}
                   </p>
                   {status === "success" && downloadUrl && (
-                    <a
-                      href={downloadUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-block rounded-full border border-primary/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.12em] text-primary transition-colors hover:bg-primary/10"
-                    >
-                      Abrir cuadernillo
-                    </a>
+                    <Button asChild variant="outline" className="h-auto rounded-full border-primary/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.12em] text-primary hover:bg-primary/10">
+                      <a href={downloadUrl} download={CUADERNILLO_PATH}>
+                        Descargar cuadernillo
+                      </a>
+                    </Button>
                   )}
                 </div>
               )}

@@ -1,9 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-
-const CUADERNILLO_PATH = "cuadernillo-sol-luna-zodiaco.pdf";
-const CUADERNILLO_BUCKET = "downloads";
-const SIGNED_URL_TTL_SECONDS = 60 * 60; // 1 hora
+import { CUADERNILLO_PATH, CUADERNILLO_BUCKET, SIGNED_URL_TTL_SECONDS } from "./lead-magnet.config";
 
 export const subscribeToLeadMagnet = createServerFn({ method: "POST" })
   .inputValidator((data) =>
@@ -37,7 +34,7 @@ export const subscribeToLeadMagnet = createServerFn({ method: "POST" })
     // Generamos una URL firmada para descargar el cuadernillo.
     const { data: signedData, error: signedError } = await supabaseAdmin.storage
       .from(CUADERNILLO_BUCKET)
-      .createSignedUrl(CUADERNILLO_PATH, SIGNED_URL_TTL_SECONDS);
+      .createSignedUrl(CUADERNILLO_PATH, SIGNED_URL_TTL_SECONDS, { download: CUADERNILLO_PATH });
 
     if (signedError || !signedData?.signedUrl) {
       console.error("Error generando signed URL:", signedError);
