@@ -1,4 +1,3 @@
-export const CALENDLY = "https://calendly.com/judyben9/30min";
 export const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
 export const WHATSAPP = "https://wa.me/5491161979623";
 
@@ -12,3 +11,7 @@ export const REDES = [
 ];
 
 export const waLink = (mensaje: string) => `${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+export const ENTREVISTA_INICIAL = waLink(
+  "¡Hola Judy! Me gustaría solicitar una entrevista inicial.",
+);

@@ -1,11 +1,13 @@
 import { describe, test } from "node:test";
 import { strict as assert } from "node:assert";
-import { CALENDLY, REDES, WHATSAPP, waLink } from "./public-links";
+import { ENTREVISTA_INICIAL, REDES, WHATSAPP, waLink } from "./public-links";
 import { CUADERNILLO_PATH } from "./lead-magnet.config";
 
 describe("Public destinations", () => {
-  test("initial interviews use the 30-minute Calendly event", () => {
-    assert.equal(CALENDLY, "https://calendly.com/judyben9/30min");
+  test("initial interviews open WhatsApp with a prefilled request", () => {
+    const url = new URL(ENTREVISTA_INICIAL);
+    assert.equal(`${url.origin}${url.pathname}`, WHATSAPP);
+    assert.equal(url.searchParams.get("text"), "¡Hola Judy! Me gustaría solicitar una entrevista inicial.");
   });
   test("WhatsApp uses the confirmed phone number and preserves the service message", () => {
     assert.equal(WHATSAPP, "https://wa.me/5491161979623");
