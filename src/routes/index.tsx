@@ -11,6 +11,7 @@ import { subscribeToLeadMagnet } from "@/lib/lead-magnet.functions";
 import { getAssetUrl } from "@/lib/asset-url";
 import { ENTREVISTA_INICIAL, REDES, TELEGRAM, waLink } from "@/lib/public-links";
 import { CUADERNILLO_PATH } from "@/lib/lead-magnet.config";
+import { isEmailFormatValid } from "@/lib/email-validation";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -169,6 +170,11 @@ function Index() {
   const handleCuadernilloSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email.trim() || status === "submitting") return;
+    if (!isEmailFormatValid(email)) {
+      setStatus("error");
+      setMessage("Dejá un email válido, por ejemplo tu@email.com.");
+      return;
+    }
     setStatus("submitting");
     setMessage("");
     setDownloadUrl("");
@@ -618,7 +624,7 @@ function Index() {
                 Un cuadernillo artístico gratuito para colorear y explorar los doce signos. Dejá
                 tu email y descargalo ahora.
               </p>
-              <form onSubmit={handleCuadernilloSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <form onSubmit={handleCuadernilloSubmit} noValidate className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <label htmlFor="email-cuadernillo" className="sr-only">
                   Email
                 </label>

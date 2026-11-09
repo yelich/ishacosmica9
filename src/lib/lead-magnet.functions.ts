@@ -1,17 +1,31 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { CUADERNILLO_PATH, CUADERNILLO_BUCKET, SIGNED_URL_TTL_SECONDS } from "./lead-magnet.config";
+import { domainAcceptsEmail, emailDomain, isEmailFormatValid } from "./email-validation";
 
 export const subscribeToLeadMagnet = createServerFn({ method: "POST" })
   .inputValidator((data) =>
     z
       .object({
-        email: z.string().email("Dejá un email válido."),
+        email: z
+          .string()
+          .trim()
+          .max(255, "El email es demasiado largo.")
+          .refine(isEmailFormatValid, "Dejá un email válido."),
         source: z.string().min(1).max(100).default("cuadernillo-sol-luna-zodiaco"),
       })
       .parse(data),
   )
   .handler(async ({ data }) => {
+    const email = data.email.toLowerCase().trim();
+
+    // Antes de guardar o entregar el cuadernillo, el dominio del email debe poder recibir correo.
+    if (!(await domainAcceptsEmail(emailDomain(email)))) {
+      throw new Error(
+        "Ese email no parece existir. Revisá que esté bien escrito e intentá de nuevo.",
+      );
+    }
+
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     // Guardamos o actualizamos el email y marcamos la descarga.
@@ -19,7 +33,7 @@ export const subscribeToLeadMagnet = createServerFn({ method: "POST" })
       .from("lead_magnet_subscriptions")
       .upsert(
         {
-          email: data.email.toLowerCase().trim(),
+          email,
           source: data.source,
           downloaded_at: new Date().toISOString(),
         },
