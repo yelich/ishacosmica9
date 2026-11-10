@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judithCardAsset from "@/assets/judith-card.jpeg.asset.json";
+import comunidadLogo from "@/assets/comunidad-corazon-solar-transparent.png";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
@@ -296,7 +297,7 @@ function Index() {
               />
               <div className="float-slow relative">
                 <img
-                  src={getAssetUrl(markAsset.url)}
+                  src={comunidadLogo}
                   alt="Emblema Corazón Solar"
                   className="mx-auto w-3/4 drop-shadow-[0_0_45px_oklch(0.83_0.14_85/45%)]"
                 />
