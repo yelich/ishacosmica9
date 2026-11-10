@@ -6,7 +6,6 @@ import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judithCardAsset from "@/assets/judith-card.jpeg.asset.json";
 import comunidadLogo from "@/assets/comunidad-corazon-solar-transparent.png";
 import emblemaHeaderAsset from "@/assets/emblema-header.png.asset.json";
-import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
 import { subscribeToLeadMagnet } from "@/lib/lead-magnet.functions";
@@ -674,7 +673,7 @@ function Index() {
       <footer className="relative z-10 border-t border-border/60 px-5 py-14">
         <div className="mx-auto max-w-5xl text-center">
           <img
-            src={getAssetUrl(markAsset.url)}
+            src={getAssetUrl(emblemaHeaderAsset.url)}
             alt="Emblema Corazón Solar"
             className="mx-auto mb-6 w-16"
           />
