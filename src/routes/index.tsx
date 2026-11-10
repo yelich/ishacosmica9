@@ -3,7 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
-import judyAsset from "@/assets/judy.png.asset.json";
+import judithCardAsset from "@/assets/judith-card.jpeg.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
@@ -311,7 +311,7 @@ function Index() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
             <div className="relative">
               <img
-                src={getAssetUrl(judyAsset.url)}
+                src={getAssetUrl(judithCardAsset.url)}
                 alt="Retrato de Judy Bentolila, Ishacósmica"
                 className="w-full rounded-3xl border border-border"
               />
