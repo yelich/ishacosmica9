@@ -5,6 +5,7 @@ import { useState } from "react";
 import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
 import judithCardAsset from "@/assets/judith-card.jpeg.asset.json";
 import comunidadLogo from "@/assets/comunidad-corazon-solar-transparent.png";
+import emblemaHeaderAsset from "@/assets/emblema-header.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
@@ -206,7 +207,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 lg:flex lg:justify-between">
           <a href="#inicio" className="flex min-w-0 items-center gap-3">
             <img
-              src={getAssetUrl(markAsset.url)}
+              src={getAssetUrl(emblemaHeaderAsset.url)}
               alt="Emblema Corazón Solar"
               className="h-10 w-10 shrink-0"
             />
