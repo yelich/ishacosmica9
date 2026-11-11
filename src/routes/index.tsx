@@ -431,6 +431,14 @@ function Index() {
                 </p>
                 <p>Te espero para observar, relacionar y aprender en comunidad.</p>
               </div>
+              <a
+                href={MEMBRESIA_COMUNIDAD}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-10 inline-block rounded-full bg-primary px-8 py-3 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Sumate a la comunidad
+              </a>
             </div>
 
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left md:grid-cols-2">
