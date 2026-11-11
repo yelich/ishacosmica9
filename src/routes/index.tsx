@@ -500,16 +500,6 @@ function Index() {
                 </p>
               </div>
             </div>
-
-            <a
-              href={TELEGRAM}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-10 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Quiero unirme a la comunidad
-            </a>
-
           </div>
         </section>
 
