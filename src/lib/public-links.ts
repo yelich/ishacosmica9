@@ -12,6 +12,6 @@ export const REDES = [
 
 export const waLink = (mensaje: string) => `${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
 
-export const ENTREVISTA_INICIAL = waLink(
-  "¡Hola Judy! Me gustaría solicitar una entrevista inicial.",
+export const entrevistaInicialLink = (sesion: string) => waLink(
+  `¡Hola, Judy! Me gustaría solicitar una entrevista inicial de ${sesion}.`,
 );

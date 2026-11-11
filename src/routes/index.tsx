@@ -10,7 +10,7 @@ import { SocialIcon } from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
 import { subscribeToLeadMagnet } from "@/lib/lead-magnet.functions";
 import { getAssetUrl } from "@/lib/asset-url";
-import { ENTREVISTA_INICIAL, REDES, TELEGRAM, waLink } from "@/lib/public-links";
+import { entrevistaInicialLink, REDES, TELEGRAM, waLink } from "@/lib/public-links";
 import { CUADERNILLO_PATH } from "@/lib/lead-magnet.config";
 import { isEmailFormatValid } from "@/lib/email-validation";
 
@@ -543,7 +543,7 @@ function Index() {
                   </dl>
                   <div className="mt-6 flex flex-wrap gap-3">
                     <a
-                      href={ENTREVISTA_INICIAL}
+                      href={entrevistaInicialLink(s.titulo)}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-block w-fit rounded-full bg-primary px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"

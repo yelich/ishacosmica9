@@ -1,15 +1,23 @@
 import { describe, test } from "node:test";
 import { strict as assert } from "node:assert";
-import { ENTREVISTA_INICIAL, REDES, WHATSAPP, waLink } from "./public-links";
+import { entrevistaInicialLink, REDES, WHATSAPP, waLink } from "./public-links";
 import { CUADERNILLO_PATH } from "./lead-magnet.config";
 import { emailDomain, isEmailFormatValid } from "./email-validation";
 
 describe("Public destinations", () => {
-  test("initial interviews open WhatsApp with a prefilled request", () => {
-    const url = new URL(ENTREVISTA_INICIAL);
-    assert.equal(`${url.origin}${url.pathname}`, WHATSAPP);
-    assert.equal(url.searchParams.get("text"), "¡Hola Judy! Me gustaría solicitar una entrevista inicial.");
-  });
+  for (const [sesion, mensaje] of [
+    ["Carta Natal", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Carta Natal."],
+    ["Revolución Solar", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Revolución Solar."],
+    ["Tarot", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Tarot."],
+    ["Astrología + Coaching", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Astrología + Coaching."],
+    ["Reiki y Activación Energética", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Reiki y Activación Energética."],
+  ]) {
+    test(`initial interview for ${sesion} opens WhatsApp with its specific request`, () => {
+      const url = new URL(entrevistaInicialLink(sesion));
+      assert.equal(`${url.origin}${url.pathname}`, WHATSAPP);
+      assert.equal(url.searchParams.get("text"), mensaje);
+    });
+  }
   test("WhatsApp uses the confirmed phone number and preserves the service message", () => {
     assert.equal(WHATSAPP, "https://wa.me/5491161979623");
     assert.equal(new URL(waLink("Consultá Carta Natal")).searchParams.get("text"), "Consultá Carta Natal");
