@@ -1,5 +1,6 @@
 export const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
 export const WHATSAPP = "https://wa.me/5491161979623";
+export const MEMBRESIA_COMUNIDAD = "https://chat.whatsapp.com/Kml6vm7BpOT6rvKmdYaTrm";
 
 export const REDES = [
   { label: "Instagram", url: "https://www.instagram.com/ishacosmica/" },

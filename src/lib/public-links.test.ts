@@ -1,10 +1,13 @@
 import { describe, test } from "node:test";
 import { strict as assert } from "node:assert";
-import { entrevistaInicialLink, REDES, WHATSAPP, waLink } from "./public-links";
+import { entrevistaInicialLink, MEMBRESIA_COMUNIDAD, REDES, WHATSAPP, waLink } from "./public-links";
 import { CUADERNILLO_PATH } from "./lead-magnet.config";
 import { emailDomain, isEmailFormatValid } from "./email-validation";
 
 describe("Public destinations", () => {
+  test("membership information opens the supplied WhatsApp group without line breaks", () => {
+    assert.equal(MEMBRESIA_COMUNIDAD, "https://chat.whatsapp.com/Kml6vm7BpOT6rvKmdYaTrm");
+  });
   for (const [sesion, mensaje] of [
     ["Carta Natal", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Carta Natal."],
     ["Revolución Solar", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Revolución Solar."],

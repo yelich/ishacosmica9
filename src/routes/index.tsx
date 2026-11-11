@@ -10,7 +10,7 @@ import { SocialIcon } from "@/components/SocialIcon";
 import { Button } from "@/components/ui/button";
 import { subscribeToLeadMagnet } from "@/lib/lead-magnet.functions";
 import { getAssetUrl } from "@/lib/asset-url";
-import { entrevistaInicialLink, REDES, TELEGRAM, waLink } from "@/lib/public-links";
+import { entrevistaInicialLink, MEMBRESIA_COMUNIDAD, REDES, TELEGRAM, waLink } from "@/lib/public-links";
 import { CUADERNILLO_PATH } from "@/lib/lead-magnet.config";
 import { isEmailFormatValid } from "@/lib/email-validation";
 
@@ -463,7 +463,7 @@ function Index() {
                   vivo, materiales de estudio y acceso a contenidos exclusivos.
                 </p>
                 <a
-                  href={waLink("¡Hola Judy! Quiero información sobre la membresía Comunidad Corazón Solar.")}
+                  href={MEMBRESIA_COMUNIDAD}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90"
