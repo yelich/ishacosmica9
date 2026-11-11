@@ -11,7 +11,7 @@ describe("Public destinations", () => {
     ["Tarot", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Tarot."],
     ["Astrología + Coaching", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Astrología + Coaching."],
     ["Reiki y Activación Energética", "¡Hola, Judy! Me gustaría solicitar una entrevista inicial de Reiki y Activación Energética."],
-  ]) {
+  ] as const) {
     test(`initial interview for ${sesion} opens WhatsApp with its specific request`, () => {
       const url = new URL(entrevistaInicialLink(sesion));
       assert.equal(`${url.origin}${url.pathname}`, WHATSAPP);
