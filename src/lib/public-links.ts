@@ -1,6 +1,6 @@
 export const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
 export const WHATSAPP = "https://wa.me/5491161979623";
-export const MEMBRESIA_COMUNIDAD = "https://chat.whatsapp.com/Kml6vm7BpOT6rvKmdYaTrm";
+export const MEMBRESIA_COMUNIDAD = `https://wa.me/qr/Y5PEMQ6JW4B3L1?text=${encodeURIComponent("¡Hola, Judy! Me gustaría saber más acerca de la Membresía Comunidad Corazón Solar")}`;
 
 export const REDES = [
   { label: "Instagram", url: "https://www.instagram.com/ishacosmica/" },
