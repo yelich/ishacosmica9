@@ -421,27 +421,21 @@ function Index() {
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-center backdrop-blur-sm sm:p-10">
               <div className="space-y-4 text-justify text-muted-foreground">
                 <p>
-                  Corazón Solar nació como un espacio para reunir personas interesadas en otra
-                  manera de acercarse a la astrología.
+                  Un espacio para integrar Astrología, Tarot, Arte y Literatura como lenguajes
+                  simbólicos que amplían nuestra mirada y acompañan el autoconocimiento.
                 </p>
                 <p>
-                  Una Astrología donde el conocimiento dialogue con el arte, la literatura, el
-                  tarot, los símbolos y la experiencia personal.
+                  Las estrellas iluminan el cielo; el arte, la imaginación; la literatura, el
+                  pensamiento; el Tarot, el presente; y la Astrología, los ciclos del alma. Creemos
+                  que cada símbolo es una puerta y que el conocimiento cobra sentido cuando se
+                  transforma en experiencia.
                 </p>
+                <p>
+                  Allí recibirás tránsitos, oráculos y promociones especiales de Talleres y consultas
+                  con descuentos, además de encuentros gratuitos exclusivos para miembros.
+                </p>
+                <p>Te espero para observar, relacionar y aprender en comunidad.</p>
               </div>
-
-              <ul className="mx-auto mt-8 grid w-fit justify-items-start gap-3 text-muted-foreground sm:grid-cols-2 sm:gap-x-10">
-                {["Clases.", "Encuentros.", "Material de estudio.", "Investigación.", "Reflexión.", "Comunidad."].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <span className="text-primary">✦</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-8 text-justify text-muted-foreground">
-                Y, sobre todo, la posibilidad de seguir aprendiendo juntos.
-              </p>
             </div>
 
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left md:grid-cols-2">
