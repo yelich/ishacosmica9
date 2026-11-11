@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
-import corazonBEditedAsset from "@/assets/corazonB-edited.png.asset.json";
+import simboloCorazonSolarAsset from "@/assets/simbolo-corazon-solar.png.asset.json";
 import judithCardAsset from "@/assets/judith-card.jpeg.asset.json";
 import comunidadLogo from "@/assets/comunidad-corazon-solar-transparent.png";
 import emblemaHeaderAsset from "@/assets/emblema-header.png.asset.json";
@@ -402,24 +402,19 @@ function Index() {
         <section id="comunidad" className="scroll-mt-32 px-5 py-14 sm:py-16">
           <Divider />
           <div className="mx-auto max-w-5xl text-center">
-            <h2 className="font-display text-3xl uppercase tracking-wide sm:text-4xl">
-              Comunidad <span className="text-gold-gradient">Corazón Solar</span>
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl font-display text-xl text-gold-gradient sm:text-2xl">
-              Aprender. Compartir. Expandir.
-            </p>
-
-            <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-3xl border border-border/40 bg-black/30">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-primary/40 bg-black/30 p-9 backdrop-blur-sm sm:p-14">
               <img
-                src={getAssetUrl(corazonBEditedAsset.url)}
-                alt="Corazón Solar - Astrología para la nueva era"
-                className="w-full object-cover object-center"
-                style={{ aspectRatio: "1750/525" }}
+                src={getAssetUrl(simboloCorazonSolarAsset.url)}
+                alt="Símbolo dorado de Corazón Solar"
+                className="mx-auto h-28 w-auto sm:h-36"
               />
-            </div>
-
-            <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-border/40 bg-black/20 p-8 text-center backdrop-blur-sm sm:p-10">
-              <div className="space-y-4 text-justify text-muted-foreground">
+              <h2 className="mt-8 font-display text-3xl uppercase tracking-wide sm:text-4xl">
+                Comunidad <span className="text-gold-gradient">Corazón Solar</span>
+              </h2>
+              <p className="mt-4 font-display text-xl text-gold-gradient sm:text-2xl">
+                Aproximación. Compartir. Expandir.
+              </p>
+              <div className="mt-8 space-y-4 text-justify text-muted-foreground">
                 <p>
                   Un espacio para integrar Astrología, Tarot, Arte y Literatura como lenguajes
                   simbólicos que amplían nuestra mirada y acompañan el autoconocimiento.
