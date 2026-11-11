@@ -5,9 +5,9 @@ import { CUADERNILLO_PATH } from "./lead-magnet.config";
 import { emailDomain, isEmailFormatValid } from "./email-validation";
 
 describe("Public destinations", () => {
-  test("membership information opens the supplied WhatsApp QR link with its message", () => {
+  test("membership information opens the confirmed WhatsApp number with its message", () => {
     const url = new URL(MEMBRESIA_COMUNIDAD);
-    assert.equal(`${url.origin}${url.pathname}`, "https://wa.me/qr/Y5PEMQ6JW4B3L1");
+    assert.equal(`${url.origin}${url.pathname}`, WHATSAPP);
     assert.equal(url.searchParams.get("text"), "¡Hola, Judy! Me gustaría saber más acerca de la Membresía Comunidad Corazón Solar");
   });
   for (const [sesion, mensaje] of [
