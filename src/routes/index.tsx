@@ -412,7 +412,7 @@ function Index() {
                 Comunidad <span className="text-gold-gradient">Corazón Solar</span>
               </h2>
               <p className="mt-4 font-display text-xl text-gold-gradient sm:text-2xl">
-                Aproximación. Compartir. Expandir.
+                Aprender. Compartir. Expandir.
               </p>
               <div className="mt-8 space-y-4 text-justify text-muted-foreground">
                 <p>
